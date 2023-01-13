@@ -5,11 +5,8 @@ import java.awt.event.*;
 public class SearchFrame extends JFrame {
   String id;
   boolean isPresented;
-  private ToolBar toolBar;
+  JToolBar toolbar = new JToolBar();
     public SearchFrame(){
-
-        toolBar = new ToolBar();
-        add(toolBar);
 
         Database db = new Database();
         
@@ -17,9 +14,6 @@ public class SearchFrame extends JFrame {
 
         // font
         Font f = new Font ("TYPE1_FONT", Font.BOLD, 30);
-
-
-        
         
         //header
         JPanel heading;
@@ -39,13 +33,12 @@ public class SearchFrame extends JFrame {
         login. setBounds (200,350, 400,350);
 
         //username
-        JTextField username = new JTextField("m");
+        JTextField username = new JTextField("");
         username.setBounds (50,50,300,50);
         username.setBackground(new Color (190,208,244));
         username.setBorder(javax.swing.BorderFactory.createEmptyBorder());
         login.add(username);
 
-        //TopBar
         
 
 
@@ -83,6 +76,43 @@ public class SearchFrame extends JFrame {
             
           });
 
+        //Panel for button
+        JPanel panelForButton = new JPanel(new FlowLayout(FlowLayout.LEFT));
+
+        // Create the toolbar
+        JToolBar toolbar = new JToolBar();
+        toolbar.setFloatable(false);
+
+        // Add buttons or other components to the toolbar
+        JButton button1 = new JButton("Search");
+        button1.setPreferredSize(new Dimension(60, 40));
+        button1.setBorder(BorderFactory.createEmptyBorder());
+        panelForButton.add(button1);
+
+        //button1.setBounds(0,0,150,75);
+        //toolbar.add(button1);
+        JButton button2 = new JButton("Insert");
+        button2.setPreferredSize(new Dimension(60, 40));
+        button2.setBorder(BorderFactory.createEmptyBorder());
+        //toolbar.add(button2);
+        panelForButton.add(button2);
+        JButton button3 = new JButton("Statistics");
+        button3.setPreferredSize(new Dimension(60, 40));
+        button3.setBorder(BorderFactory.createEmptyBorder());
+        //toolbar.add(button3);
+        panelForButton.add(button3);
+
+        toolbar.add(panelForButton);
+        //Switch tab Insert Button
+        button2.addActionListener(new ActionListener() {
+          @Override
+          public void actionPerformed(ActionEvent e) {
+            setVisible(false);
+            new SearchResult().setVisible(true);
+          }
+        });
+        
+
         
 
 
@@ -91,17 +121,19 @@ public class SearchFrame extends JFrame {
         setLayout(null);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setResizable(false);
+        setResizable(true);
 
         //Image
-        /*
         ImageIcon background_image = new ImageIcon("bg.jpg");
         JLabel background = new JLabel ("", background_image, JLabel.CENTER);
         background.add(login);
         background.add(heading);
-        background. setBounds (0,0,800, 800);
-        add(background);
-        */
+        background.setBounds(0,0,800, 800);
+
+
+        setLayout(new BorderLayout());
+        add(toolbar, BorderLayout.NORTH);
+        add(background, BorderLayout.CENTER);
         
 
 

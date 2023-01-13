@@ -7,14 +7,8 @@ public class LoginFrame extends JFrame {
   static String pw;
   boolean isPresented;
     public LoginFrame(){
-
-        Database db = new Database();
-        
-        JFrame frame = new JFrame();
-
         // font
         Font f = new Font ("TYPE1_FONT", Font.BOLD, 30);
-        
         //header
         JPanel heading;
         heading = new JPanel ();
@@ -33,7 +27,7 @@ public class LoginFrame extends JFrame {
         login. setBounds (200,350, 400,350);
 
         //username
-        JTextField username = new JTextField("m");
+        JTextField username = new JTextField("");
         
         /* 
         username.addFocusListener(new FocusListener() {
@@ -52,7 +46,7 @@ public class LoginFrame extends JFrame {
         login.add(username);
 
         //Password
-        JTextField password = new JTextField("p");
+        JTextField password = new JTextField("");
         password.setBounds (50,150,300,50);
         password.setBackground(new Color (190,208,244));
         password.setBorder(javax.swing.BorderFactory.createEmptyBorder());
@@ -67,7 +61,7 @@ public class LoginFrame extends JFrame {
         login.add(login_button);
 
 
-
+        //Button to go into the SearchFrame
         login_button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -81,7 +75,7 @@ public class LoginFrame extends JFrame {
                 return;
               }
               */
-              if (id == "m" && pw == "p"){
+              if (id == "matteo" && pw == "segreto"){
                 isPresented=true;
 
               }
@@ -99,18 +93,9 @@ public class LoginFrame extends JFrame {
               
               db.cercaTartarugaIdNomeTarghetta(id, QUERY);
               */
-      
-              
-      
-      
             }
-      
-            
           });
-
-        
-
-
+          
         //frame
         setSize(800,800) ;
         setLayout(null);
