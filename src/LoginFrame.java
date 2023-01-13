@@ -56,7 +56,7 @@ public class LoginFrame extends JFrame {
 
         //Button
         Button login_button = new Button ("Login");
-        login_button.setBounds (160,250,100,50);
+        login_button.setBounds (150,250,100,50);
         login_button.setBackground (new Color (255,255,255));
         login.add(login_button);
 
@@ -98,7 +98,7 @@ public class LoginFrame extends JFrame {
           
         //frame
         setSize(800,800) ;
-        setLayout(null);
+        getContentPane().setLayout(null);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
@@ -109,7 +109,7 @@ public class LoginFrame extends JFrame {
         background.add(login);
         background.add(heading);
         background. setBounds (0,0,800, 800);
-        add(background);
+        getContentPane().add(background);
         
 
 
