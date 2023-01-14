@@ -2,6 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.border.LineBorder;
+<<<<<<< Updated upstream
+=======
+import javax.swing.border.MatteBorder;
+>>>>>>> Stashed changes
 
 public class SearchFrame extends JFrame {
   String id;
@@ -79,11 +83,13 @@ public class SearchFrame extends JFrame {
 
         //Panel for button
         JPanel panelForButton = new JPanel(new FlowLayout(FlowLayout.LEFT));
-
+        
+        
         // Create the toolbar
         JToolBar toolbar = new JToolBar();
         toolbar.setFloatable(false);
 
+        
         // Add buttons or other components to the toolbar
         JButton button1 = new JButton("Search");
         button1.setBackground(new Color(240, 240, 240));
@@ -91,20 +97,27 @@ public class SearchFrame extends JFrame {
         	public void actionPerformed(ActionEvent e) {
         	}
         });
+<<<<<<< Updated upstream
         button1.setPreferredSize(new Dimension(60, 40));
         button1.setBorder(null);
+=======
+        button1.setPreferredSize(new Dimension(60, 30));
+        button1.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
+>>>>>>> Stashed changes
         panelForButton.add(button1);
 
         //button1.setBounds(0,0,150,75);
         //toolbar.add(button1);
         JButton button2 = new JButton("Insert");
+        button2.setBackground(new Color(240, 240, 240));
         button2.setPreferredSize(new Dimension(60, 40));
-        button2.setBorder(BorderFactory.createEmptyBorder());
+        button2.setBorder(null);
         //toolbar.add(button2);
         panelForButton.add(button2);
         JButton button3 = new JButton("Statistics");
+        button3.setBackground(new Color(240, 240, 240));
         button3.setPreferredSize(new Dimension(60, 40));
-        button3.setBorder(BorderFactory.createEmptyBorder());
+        button3.setBorder(null);
         //toolbar.add(button3);
         panelForButton.add(button3);
 

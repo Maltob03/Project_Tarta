@@ -5,7 +5,7 @@ import java.awt.event.*;
 public class LoginFrame extends JFrame {
   static String id;
   static String pw;
-  boolean isPresented;
+  boolean isPresented = false;
     public LoginFrame(){
         // font
         Font f = new Font ("TYPE1_FONT", Font.BOLD, 30);
@@ -27,9 +27,9 @@ public class LoginFrame extends JFrame {
         login. setBounds (200,350, 400,350);
 
         //username
-        JTextField username = new JTextField("");
+        JTextField username = new JTextField("matteo");
         
-        /* 
+        
         username.addFocusListener(new FocusListener() {
           public void focusGained(FocusEvent e) {
               username.setText("");
@@ -38,21 +38,21 @@ public class LoginFrame extends JFrame {
           public void focusLost(FocusEvent e) {
           }
       });
-      */
+      
 
         username.setBounds (50,50,300,50);
         username.setBackground(new Color (190,208,244));
         username.setBorder(javax.swing.BorderFactory.createEmptyBorder());
         login.add(username);
 
+        
         //Password
-        JTextField password = new JTextField("");
+        JTextField password = new JTextField("segreto");
         password.setBounds (50,150,300,50);
         password.setBackground(new Color (190,208,244));
         password.setBorder(javax.swing.BorderFactory.createEmptyBorder());
         login.add(password);
-
-
+        
 
         //Button
         Button login_button = new Button ("Login");
@@ -63,26 +63,32 @@ public class LoginFrame extends JFrame {
 
         //Button to go into the SearchFrame
         login_button.addActionListener(new ActionListener() {
-            @Override
+            private Component frame;
+
+			@Override
             public void actionPerformed(ActionEvent e) {
               // Recupera l'ID e password inserito dall'utente
               id = username.getText();
               pw = password.getText();
+
               
-              /*
               if (id.isEmpty()) {
-                JOptionPane.showMessageDialog(frame, "Inserisci un ID", "Errore", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this.frame, "Inserisci un ID", "Errore", JOptionPane.ERROR_MESSAGE);
                 return;
               }
-              */
-              if (id == "matteo" && pw == "segreto"){
-                isPresented=true;
-
+              
+              if (id.equals("matteo") && pw.equals("segreto")){
+                isPresented = true;
+                
               }
 
-              if(isPresented = true){
+              if(isPresented == true){
                 setVisible(false);
                 new SearchFrame().setVisible(true);
+              }
+              else {
+            	  JOptionPane.showMessageDialog(this.frame, "A chi cazzo vuoi fottere stronzo", "Pezzo di merda", JOptionPane.ERROR_MESSAGE);
+                  return;
               }
               
               
