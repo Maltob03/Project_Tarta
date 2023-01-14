@@ -4,7 +4,13 @@
     // Per altre informazioni, visitare: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "Project_Tarta_faf61c81"
+        },
         {
             "type": "java",
             "name": "Launch Current File",

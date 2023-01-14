@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
 
 public class SearchFrame extends JFrame {
