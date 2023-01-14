@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.border.LineBorder;
+import javax.swing.border.MatteBorder;
 
 public class SearchFrame extends JFrame {
   String id;
@@ -45,7 +47,7 @@ public class SearchFrame extends JFrame {
 
         //Button
         Button login_button = new Button ("Go");
-        login_button.setBounds (160,250,100,50);
+        login_button.setBounds (154,151,100,50);
         login_button.setBackground (new Color (255,255,255));
         login.add(login_button);
 
@@ -78,27 +80,36 @@ public class SearchFrame extends JFrame {
 
         //Panel for button
         JPanel panelForButton = new JPanel(new FlowLayout(FlowLayout.LEFT));
-
+        
+        
         // Create the toolbar
         JToolBar toolbar = new JToolBar();
         toolbar.setFloatable(false);
 
+        
         // Add buttons or other components to the toolbar
         JButton button1 = new JButton("Search");
-        button1.setPreferredSize(new Dimension(60, 40));
-        button1.setBorder(BorderFactory.createEmptyBorder());
+        button1.setBackground(new Color(240, 240, 240));
+        button1.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        	}
+        });
+        button1.setPreferredSize(new Dimension(60, 30));
+        button1.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
         panelForButton.add(button1);
 
         //button1.setBounds(0,0,150,75);
         //toolbar.add(button1);
         JButton button2 = new JButton("Insert");
+        button2.setBackground(new Color(240, 240, 240));
         button2.setPreferredSize(new Dimension(60, 40));
-        button2.setBorder(BorderFactory.createEmptyBorder());
+        button2.setBorder(null);
         //toolbar.add(button2);
         panelForButton.add(button2);
         JButton button3 = new JButton("Statistics");
+        button3.setBackground(new Color(240, 240, 240));
         button3.setPreferredSize(new Dimension(60, 40));
-        button3.setBorder(BorderFactory.createEmptyBorder());
+        button3.setBorder(null);
         //toolbar.add(button3);
         panelForButton.add(button3);
 
@@ -118,7 +129,7 @@ public class SearchFrame extends JFrame {
 
         //frame
         setSize(800,800) ;
-        setLayout(null);
+        getContentPane().setLayout(null);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(true);
@@ -131,9 +142,9 @@ public class SearchFrame extends JFrame {
         background.setBounds(0,0,800, 800);
 
 
-        setLayout(new BorderLayout());
-        add(toolbar, BorderLayout.NORTH);
-        add(background, BorderLayout.CENTER);
+        getContentPane().setLayout(new BorderLayout());
+        getContentPane().add(toolbar, BorderLayout.NORTH);
+        getContentPane().add(background, BorderLayout.CENTER);
         
 
 
