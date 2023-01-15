@@ -101,13 +101,13 @@ public class SearchFrame extends JFrame {
         //toolbar.add(button1);
         JButton button2 = new JButton("Insert");
         button2.setBackground(new Color(240, 240, 240));
-        button2.setPreferredSize(new Dimension(60, 40));
+        button2.setPreferredSize(new Dimension(60, 30));
         button2.setBorder(null);
         //toolbar.add(button2);
         panelForButton.add(button2);
         JButton button3 = new JButton("Statistics");
         button3.setBackground(new Color(240, 240, 240));
-        button3.setPreferredSize(new Dimension(60, 40));
+        button3.setPreferredSize(new Dimension(60, 30));
         button3.setBorder(null);
         //toolbar.add(button3);
         panelForButton.add(button3);
