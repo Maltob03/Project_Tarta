@@ -159,10 +159,9 @@ public class InsertFrame extends JFrame {
         }
 
         // QUERY THAT PASS THE QUERY TO THE DB METHOD
-        final String QUERY = "INSERT INTO tartaruga(id_tartaruga,nome,targhetta,id_sede,id_vasca)VALUES(15," + "'"
-            + nome + "'" + "," + "'" + targhetta + "'" + "," + sede + "," + vasca + ");";
+        
 
-        db.inserisciTartaruga(nome, targhetta, sede, vasca, QUERY);
+        db.inserisciTartaruga(nome, targhetta, sede, vasca);
         JOptionPane.showMessageDialog(this.frame, "Operation success correctly");
         return;
       }

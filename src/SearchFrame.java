@@ -64,9 +64,9 @@ public class SearchFrame extends JFrame {
               
 
               //QUERY THAT PASS THE QUERY TO THE DB METHOD
-              final String QUERY = "SELECT id_tartaruga, nome, targhetta FROM tartaruga WHERE tartaruga.id_tartaruga = " + id ;
               
-              db.cercaTartarugaIdNomeTarghetta(id, QUERY);
+              
+              db.cercaTartarugaIdNomeTarghetta(id);
       
               
       
