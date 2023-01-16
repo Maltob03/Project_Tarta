@@ -10,7 +10,7 @@ public class Database {
   static final String DB_URL = "jdbc:postgresql://127.0.0.1:5432/project_tarta";
   static final String USER = "postgres";
   static final String PASS = "admin";
-  private JFrame frame = new JFrame("Gestione delle tartarughe"); //attributo proprio di questa classe
+  //private JFrame frame = new JFrame("Gestione delle tartarughe"); //attributo proprio di questa classe
   
   
 
@@ -25,6 +25,18 @@ public class Database {
           JOptionPane.INFORMATION_MESSAGE);
           //risultati è il titolo della finestra
         }
+      } catch (SQLException error) {
+        error.printStackTrace();
+      }
+      return;
+      
+  }
+
+
+  public void inserisciTartaruga(String nome, String targhetta, int sede, int vasca, String QUERY) {
+    try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+          Statement stmt = conn.createStatement();
+          ResultSet rs = stmt.executeQuery(QUERY);) {
       } catch (SQLException error) {
         error.printStackTrace();
       }

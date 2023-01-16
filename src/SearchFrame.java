@@ -10,9 +10,6 @@ public class SearchFrame extends JFrame {
     public SearchFrame(){
 
         Database db = new Database();
-        
-        JFrame frame = new JFrame();
-
         // font
         Font f = new Font ("TYPE1_FONT", Font.BOLD, 30);
         
@@ -53,12 +50,14 @@ public class SearchFrame extends JFrame {
 
 
         login_button.addActionListener(new ActionListener() {
+            private Component frame;
+
             @Override
             public void actionPerformed(ActionEvent e) {
               // Recupera l'ID e password inserito dall'utente
               id = username.getText();
               if (id.isEmpty()) {
-                JOptionPane.showMessageDialog(frame, "Inserisci un ID", "Errore", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this.frame, "Inserisci un ID", "Errore", JOptionPane.ERROR_MESSAGE);
                 return;
               }
               
@@ -118,7 +117,7 @@ public class SearchFrame extends JFrame {
           @Override
           public void actionPerformed(ActionEvent e) {
             setVisible(false);
-            new SearchResult().setVisible(true);
+            new InsertFrame().setVisible(true);
           }
         });
         
