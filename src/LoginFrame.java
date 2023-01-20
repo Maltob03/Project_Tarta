@@ -29,6 +29,7 @@ public class LoginFrame extends JFrame {
         //username
         JTextField username = new JTextField("matteo");
         
+       
         
         username.addFocusListener(new FocusListener() {
           public void focusGained(FocusEvent e) {
@@ -42,7 +43,7 @@ public class LoginFrame extends JFrame {
 
         username.setBounds (50,50,300,50);
         username.setBackground(new Color (190,208,244));
-        username.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+        username.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,8,0,0));
         login.add(username);
 
         
@@ -50,7 +51,7 @@ public class LoginFrame extends JFrame {
         JTextField password = new JTextField("segreto");
         password.setBounds (50,150,300,50);
         password.setBackground(new Color (190,208,244));
-        password.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+        password.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,8,0,0));
         login.add(password);
         
 
