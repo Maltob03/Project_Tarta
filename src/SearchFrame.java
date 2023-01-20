@@ -66,7 +66,8 @@ public class SearchFrame extends JFrame {
               //QUERY THAT PASS THE QUERY TO THE DB METHOD
               
               
-              db.cercaTartarugaIdNomeTarghetta(id);
+              db.cercaTartaruga(id);
+              setVisible(false);
       
               
       
@@ -112,6 +113,8 @@ public class SearchFrame extends JFrame {
         panelForButton.add(button3);
 
         toolbar.add(panelForButton);
+
+        
         //Switch tab Insert Button
         button2.addActionListener(new ActionListener() {
           @Override
