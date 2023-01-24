@@ -85,21 +85,12 @@ public class LoginFrame extends JFrame {
 
               if(isPresented == true){
                 setVisible(false);
-                new SearchFrame().setVisible(true);
+                new MainFrame().setVisible(true);
               }
               else {
             	  JOptionPane.showMessageDialog(this.frame, "A chi cazzo vuoi fottere stronzo", "Pezzo di merda", JOptionPane.ERROR_MESSAGE);
                   return;
               }
-              
-              
-
-              //QUERY THAT PASS THE QUERY TO THE DB METHOD
-              /*
-              final String QUERY = "SELECT id_tartaruga, nome, targhetta FROM tartaruga WHERE tartaruga.id_tartaruga = " + id ;
-              
-              db.cercaTartarugaIdNomeTarghetta(id, QUERY);
-              */
             }
           });
           

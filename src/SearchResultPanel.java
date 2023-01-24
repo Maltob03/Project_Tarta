@@ -2,14 +2,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class ViewResultFrame extends JFrame {
-
+public class SearchResultPanel extends JPanel {
     String nome;
     String targhetta;
     int sede;
     int vasca;
 
-    public ViewResultFrame(String nome, String targhetta, int sede, int vasca) {
+    public SearchResultPanel(String nome, String targhetta, int sede, int vasca) {
         this.nome = nome;
         this.targhetta = targhetta;
         this.sede = sede;
@@ -71,10 +70,5 @@ public class ViewResultFrame extends JFrame {
             }
           });
 
-
-          setTitle("Project Tarta");
-          setSize(800, 800);
-          setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-          setVisible(true);
-  }
+    }
 }
