@@ -9,7 +9,7 @@ public class CartellaClinicaPanel extends JPanel {
     static int vasca;
     boolean isPresented;
 
-    public CartellaClinicaPanel() {
+    public CartellaClinicaPanel(MainFrame mframe) {
 
         setLayout(new BorderLayout());
 
@@ -34,13 +34,13 @@ public class CartellaClinicaPanel extends JPanel {
 
         JTextField textField = new JTextField("Specie");
         textField.setBounds(45, 132, 226, 44);
-        background.add(textField);
+        //background.add(textField);
         textField.setColumns(10);
         login.add(textField);
 
         JTextField textField_1 = new JTextField("Lunghezza");
         textField_1.setColumns(10);
-        textField_1.setBounds(45, 223, 226, 44);
+        textField_1.setBounds(45, 320, 226, 44);
         login.add(textField_1);
 
         JTextField textField_3 = new JTextField("Larghezza");
@@ -50,20 +50,20 @@ public class CartellaClinicaPanel extends JPanel {
 
         JTextField textField_4 = new JTextField("Peso");
         textField_4.setColumns(10);
-        textField_4.setBounds(428, 183, 226, 44);
+        textField_4.setBounds(428, 223, 226, 44);
         login.add(textField_4);
 
         JTextField textField_5 = new JTextField("Luogo di Ritrovamento");
         textField_5.setColumns(10);
-        textField_5.setBounds(428, 223, 226, 44);
+        textField_5.setBounds(428, 320, 226, 44);
         login.add(textField_5);
 
         JTextField textField_6 = new JTextField("Data di Ritrovamento");
         textField_6.setColumns(10);
-        textField_6.setBounds(45, 183, 226, 44);
+        textField_6.setBounds(45, 223, 226, 44);
         login.add(textField_6);
 
-        Button insert_tarta_button = new Button("Insert");
+        Button insert_tarta_button = new Button("Avanti");
         insert_tarta_button.setBounds(300, 423, 100, 30);
         login.add(insert_tarta_button);
 
@@ -82,10 +82,14 @@ public class CartellaClinicaPanel extends JPanel {
                     return;
                 }
 
+                
+                setVisible(false);
+                mframe.setContentPane(mframe.panel5);
+                mframe.panel5.setVisible(true);
                 // QUERY THAT PASS THE QUERY TO THE DB METHOD
 
-                db.inserisciTartaruga(nome, targhetta, sede, vasca);
-                JOptionPane.showMessageDialog(this.frame, "Operation success correctly");
+               // db.inserisciTartaruga(nome, targhetta, sede, vasca);
+                //JOptionPane.showMessageDialog(this.frame, "Operation success correctly");
                 return;
             }
         });

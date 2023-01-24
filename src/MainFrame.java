@@ -4,11 +4,13 @@ import javax.swing.border.MatteBorder;
 
 public class MainFrame extends JFrame {
 
-    private SearchPanel panel1;
-    private InsertTartarugaPanel panel2;
-    private SearchResultPanel panel3;
-    private CartellaClinicaPanel panel4;
-
+	public SearchPanel panel1;
+    public InsertTartarugaPanel panel2;
+    public SearchResultPanel panel3;
+    public CartellaClinicaPanel panel4;
+    public valutazioni panel5;
+    
+    
     public MainFrame() {
         setTitle("Project Tarta");
         setSize(800, 800);
@@ -55,7 +57,7 @@ public class MainFrame extends JFrame {
         
 
         // Panel 2
-        panel2 = new InsertTartarugaPanel();
+        panel2 = new InsertTartarugaPanel(this);
         JButton bottone = new JButton("NEXT");
         bottone.setBackground(new Color(0, 240, 240));
         bottone.setPreferredSize(new Dimension(80, 40));
@@ -74,7 +76,7 @@ public class MainFrame extends JFrame {
 
 
 
-        panel4 = new CartellaClinicaPanel();
+        panel4 = new CartellaClinicaPanel(this);
         JButton bottone35 = new JButton("NEEEXT");
         bottone35.setBackground(new Color(0, 240, 240));
         bottone35.setPreferredSize(new Dimension(80, 40));
@@ -151,10 +153,14 @@ public class MainFrame extends JFrame {
         });
 
         
+        panel5 = new valutazioni(this);
+        
 
         setLocationRelativeTo(null);
         getContentPane().add(toolbar, BorderLayout.NORTH);
         setVisible(true);
     }
 
+
+    
 }

@@ -9,7 +9,8 @@ public class InsertTartarugaPanel extends JPanel {
     static int vasca;
     boolean isPresented;
 
-    public InsertTartarugaPanel() {
+    
+    public InsertTartarugaPanel(MainFrame mframe) {
 
         setLayout(new BorderLayout());
 
@@ -34,7 +35,7 @@ public class InsertTartarugaPanel extends JPanel {
 
         JTextField textField = new JTextField("Nome");
         textField.setBounds(45, 132, 226, 44);
-        background.add(textField);
+        //background.add(textField);
         textField.setColumns(10);
         login.add(textField);
 
@@ -53,11 +54,16 @@ public class InsertTartarugaPanel extends JPanel {
         textField_4.setBounds(428, 300, 226, 44);
         login.add(textField_4);
 
-        Button insert_tarta_button = new Button("Insert");
+        Button insert_tarta_button = new Button("Avanti");
         insert_tarta_button.setBounds(300, 400, 100, 30);
         login.add(insert_tarta_button);
 
         insert_tarta_button.addActionListener(new ActionListener() {
+        	
+        	
+        	
+        	
+        	
             private Component frame;
 
             @Override
@@ -66,6 +72,10 @@ public class InsertTartarugaPanel extends JPanel {
                 Tartaruga.targhetta = textField_1.getText();
                 Tartaruga.sede = Integer.parseInt(textField_3.getText());
                 Tartaruga.vasca = Integer.parseInt(textField_4.getText());
+                
+                setVisible(false);
+                mframe.setContentPane(mframe.panel4);
+                mframe.panel4.setVisible(true);
 /* 
                 if (nome.isEmpty()) {
                     JOptionPane.showMessageDialog(this.frame, "Inserisci un ID", "Errore", JOptionPane.ERROR_MESSAGE);
@@ -115,6 +125,6 @@ public class InsertTartarugaPanel extends JPanel {
 
             public void focusLost(FocusEvent e) {
             }
-        });
+       });
     }
 }
