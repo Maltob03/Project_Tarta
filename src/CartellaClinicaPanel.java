@@ -86,6 +86,9 @@ public class CartellaClinicaPanel extends JPanel {
                 setVisible(false);
                 mframe.setContentPane(mframe.panel5);
                 mframe.panel5.setVisible(true);
+                
+                mframe.getContentPane().add(mframe.toolbar, BorderLayout.NORTH);
+                
                 // QUERY THAT PASS THE QUERY TO THE DB METHOD
 
                // db.inserisciTartaruga(nome, targhetta, sede, vasca);

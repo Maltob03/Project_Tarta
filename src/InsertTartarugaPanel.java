@@ -76,7 +76,10 @@ public class InsertTartarugaPanel extends JPanel {
                 setVisible(false);
                 mframe.setContentPane(mframe.panel4);
                 mframe.panel4.setVisible(true);
-/* 
+                
+                mframe.getContentPane().add(mframe.toolbar, BorderLayout.NORTH);
+                
+                /* 
                 if (nome.isEmpty()) {
                     JOptionPane.showMessageDialog(this.frame, "Inserisci un ID", "Errore", JOptionPane.ERROR_MESSAGE);
                     return;

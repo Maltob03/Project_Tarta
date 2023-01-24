@@ -9,7 +9,7 @@ public class MainFrame extends JFrame {
     public SearchResultPanel panel3;
     public CartellaClinicaPanel panel4;
     public valutazioni panel5;
-    
+    public JToolBar toolbar;
     
     public MainFrame() {
         setTitle("Project Tarta");
@@ -22,7 +22,7 @@ public class MainFrame extends JFrame {
         JPanel panelForButton = new JPanel(new FlowLayout(FlowLayout.LEFT));
 
         // Create the toolbar
-        JToolBar toolbar = new JToolBar();
+        toolbar = new JToolBar();
         toolbar.setFloatable(false);
 
         // Add buttons or other components to the toolbar
@@ -98,7 +98,13 @@ public class MainFrame extends JFrame {
             remove(panel2);
             remove(panel3);
             remove(panel4);
+            remove(panel5);
+            
+          
             add(panel1, BorderLayout.CENTER);
+            
+           
+            
             revalidate();
             repaint();
         });
@@ -108,6 +114,8 @@ public class MainFrame extends JFrame {
             button2.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
             remove(panel1);
             remove(panel3);
+            remove(panel4);
+            remove(panel5);
             add(panel2, BorderLayout.CENTER);
             revalidate();
             repaint();
@@ -118,6 +126,8 @@ public class MainFrame extends JFrame {
             button3.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
             remove(panel1);
             remove(panel2);
+            remove(panel4);
+            remove(panel5);
             add(panel3, BorderLayout.CENTER);
             revalidate();
             repaint();

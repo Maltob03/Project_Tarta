@@ -11,6 +11,8 @@ public class valutazioni extends JPanel {
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public valutazioni(MainFrame mframe) {
+		
+        setLayout(new BorderLayout());
 
 		Database db = new Database();
 
@@ -115,6 +117,7 @@ public class valutazioni extends JPanel {
 		ComboTesta.setMaximumRowCount(10);
 		ComboTesta.setBounds(407, 116, 69, 30);
 		login.add(ComboTesta);
+
 
 	}
 }
