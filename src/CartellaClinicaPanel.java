@@ -127,5 +127,21 @@ public class CartellaClinicaPanel extends JPanel {
             public void focusLost(FocusEvent e) {
             }
         });
+        textField_5.addFocusListener(new FocusListener() {
+            public void focusGained(FocusEvent e) {
+                textField_5.setText("");
+            }
+
+            public void focusLost(FocusEvent e) {
+            }
+        });
+        textField_6.addFocusListener(new FocusListener() {
+            public void focusGained(FocusEvent e) {
+                textField_6.setText("");
+            }
+
+            public void focusLost(FocusEvent e) {
+            }
+        });
     }
 }
