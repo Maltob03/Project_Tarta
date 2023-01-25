@@ -1,6 +1,8 @@
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.MatteBorder;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class MainFrame extends JFrame {
 
@@ -15,7 +17,7 @@ public class MainFrame extends JFrame {
         setTitle("Project Tarta");
         setSize(800, 800);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new BorderLayout());
+        getContentPane().setLayout(new BorderLayout());
         setResizable(false);
         // Toolbar
         // Panel for button
@@ -44,9 +46,46 @@ public class MainFrame extends JFrame {
         button3.setBorder(null);
         panelForButton.add(button3);
 
-        toolbar.add(panelForButton);
+        
+        JButton button4 = new JButton("In sospeso");
+        button4.addMouseListener(new MouseAdapter() {
+        	private Component frame;
 
-        add(toolbar);
+			@SuppressWarnings("unused")
+			@Override
+        	public void mouseClicked(MouseEvent e) {
+				if(true) {
+        		 JOptionPane.showMessageDialog(this.frame, "Non ci sono tartarughe da sistemare", "Bene...", JOptionPane.INFORMATION_MESSAGE);
+				}
+				else
+				{
+					
+					SELECT Lunghezza
+					FROM CartellaClinica
+					WHERE larghezza = NULL
+					
+					
+					
+					
+					
+					
+					
+					
+					JOptionPane.showMessageDialog(this.frame, "Non ci sono tartarughe da sistemare", "Bene...", JOptionPane.INFORMATION_MESSAGE);
+				}
+				
+				
+				}
+        });
+        button4.setBackground(new Color(240, 240, 240));
+        button4.setPreferredSize(new Dimension(70, 30));
+        button4.setBorder(null);
+        panelForButton.add(button4);
+
+        toolbar.add(panelForButton);
+        
+
+        getContentPane().add(toolbar);
 
 
         JPanel panelForNext = new JPanel();
@@ -89,7 +128,7 @@ public class MainFrame extends JFrame {
         
 
         // Add panels to the frame and make panel1 visible by default
-        add(panel1, BorderLayout.CENTER);
+        getContentPane().add(panel1, BorderLayout.CENTER);
 
         button1.addActionListener(e -> {
             button1.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));

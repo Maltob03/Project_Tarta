@@ -16,16 +16,16 @@ public class SearchPanel extends JPanel {
         JLabel background = new JLabel("", background_image, JLabel.CENTER);
         JPanel base = new JPanel();
         add(base);
-        base.add(background);
+       base.add(background);
 
         JLabel name = new JLabel ("Find your turtle");
-        name.setBounds(260, 200, 300, 50);
+        name.setBounds(270, 200, 300, 50);
         name.setFont(f);
         name.setForeground(Color.WHITE);
         background.add(name);
 
         JTextField research = new JTextField("");
-        research.setBounds (230, 380, 300, 50);
+        research.setBounds (240, 380, 300, 50);
         research.setBackground(new Color(190, 208, 244));
         research.setBorder(javax.swing.BorderFactory.createEmptyBorder());
         background.add(research);
@@ -34,6 +34,7 @@ public class SearchPanel extends JPanel {
         login_button.setBounds (330,500,100,50);
         login_button.setBackground (new Color (255,255,255));
         background.add(login_button);
+
 
 
 
