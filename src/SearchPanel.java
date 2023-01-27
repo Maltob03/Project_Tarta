@@ -1,5 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
+
 import java.awt.event.*;
 
 public class SearchPanel extends JPanel {
@@ -16,7 +17,7 @@ public class SearchPanel extends JPanel {
         JLabel background = new JLabel("", background_image, JLabel.CENTER);
         JPanel base = new JPanel();
         add(base);
-       base.add(background);
+        base.add(background);
 
         JLabel name = new JLabel ("Find your turtle");
         name.setBounds(270, 200, 300, 50);
@@ -34,7 +35,6 @@ public class SearchPanel extends JPanel {
         login_button.setBounds (330,500,100,50);
         login_button.setBackground (new Color (255,255,255));
         background.add(login_button);
-
 
 
 

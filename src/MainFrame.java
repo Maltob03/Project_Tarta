@@ -1,30 +1,28 @@
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.MatteBorder;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 public class MainFrame extends JFrame {
 
-	public SearchPanel panel1;
-    public InsertTartarugaPanel panel2;
-    public SearchResultPanel panel3;
-    public CartellaClinicaPanel panel4;
-    public valutazioni panel5;
-    public JToolBar toolbar;
-    
+    private SearchPanel panel1;
+    private InsertTartarugaPanel panel2;
+    private SearchResultPanel panel3;
+    private CartellaClinicaPanel panel4;
+    private valutazioni panel5;
+
     public MainFrame() {
+        
         setTitle("Project Tarta");
         setSize(800, 800);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new BorderLayout());
+        setLayout(new BorderLayout());
         setResizable(false);
         // Toolbar
         // Panel for button
         JPanel panelForButton = new JPanel(new FlowLayout(FlowLayout.LEFT));
 
         // Create the toolbar
-        toolbar = new JToolBar();
+        JToolBar toolbar = new JToolBar();
         toolbar.setFloatable(false);
 
         // Add buttons or other components to the toolbar
@@ -46,68 +44,35 @@ public class MainFrame extends JFrame {
         button3.setBorder(null);
         panelForButton.add(button3);
 
-        
-        JButton button4 = new JButton("In sospeso");
-        button4.addMouseListener(new MouseAdapter() {
-        	private Component frame;
 
-			@SuppressWarnings("unused")
-			@Override
-        	public void mouseClicked(MouseEvent e) {
-				if(true) {
-        		 JOptionPane.showMessageDialog(this.frame, "Non ci sono tartarughe da sistemare", "Bene...", JOptionPane.INFORMATION_MESSAGE);
-				}
-				else
-				{
-					
-					SELECT Lunghezza
-					FROM CartellaClinica
-					WHERE larghezza = NULL
-					
-					
-					
-					
-					
-					
-					
-					
-					JOptionPane.showMessageDialog(this.frame, "Non ci sono tartarughe da sistemare", "Bene...", JOptionPane.INFORMATION_MESSAGE);
-				}
-				
-				
-				}
-        });
+
+        JButton button4 = new JButton("Suspends");
         button4.setBackground(new Color(240, 240, 240));
-        button4.setPreferredSize(new Dimension(70, 30));
+        button4.setPreferredSize(new Dimension(60, 30));
         button4.setBorder(null);
         panelForButton.add(button4);
 
         toolbar.add(panelForButton);
-        
 
-        getContentPane().add(toolbar);
+        add(toolbar);
 
 
         JPanel panelForNext = new JPanel();
-        JPanel panelForNeext = new JPanel();
+        JPanel panelForSecondNext = new JPanel();
         // Panel 1
         panel1 = new SearchPanel();
+
         
         
 
         // Panel 2
-        panel2 = new InsertTartarugaPanel(this);
-        JButton bottone = new JButton("NEXT");
-        bottone.setBackground(new Color(0, 240, 240));
-        bottone.setPreferredSize(new Dimension(80, 40));
-        bottone.setBounds(50, 50, 100, 100);
-
-        JButton bottoneBack = new JButton("NEXTTTTT");
-        bottoneBack.setBackground(new Color(0, 240, 240));
-        bottoneBack.setPreferredSize(new Dimension(80, 40));
-        bottoneBack.setBounds(150, 50, 100, 100);
+        panel2 = new InsertTartarugaPanel();
+        JButton next1 = new JButton("NEXT 1");
+        next1.setBackground(new Color(0, 240, 240));
+        next1.setPreferredSize(new Dimension(80, 40));
+        next1.setBounds(50, 50, 100, 100);
+        panelForNext.add(next1);
         
-        panelForNext.add(bottone,bottoneBack);
         
         
 
@@ -115,20 +80,27 @@ public class MainFrame extends JFrame {
 
 
 
-        panel4 = new CartellaClinicaPanel(this);
-        JButton bottone35 = new JButton("NEEEXT");
-        bottone35.setBackground(new Color(0, 240, 240));
-        bottone35.setPreferredSize(new Dimension(80, 40));
-        panelForNeext.add(bottone35);
-        bottone35.setBounds(50, 50, 100, 100);
-        panel4.add(panelForNeext, BorderLayout.SOUTH);
+        
 
         // Panel 3
         panel3 = new SearchResultPanel("pippo","topolino",2,2);
+
+
+        //panel 4
+        panel4 = new CartellaClinicaPanel();
+        JButton next2 = new JButton("NEXT 2");
+        next2.setBackground(new Color(0, 240, 240));
+        next2.setPreferredSize(new Dimension(80, 40));
+        panelForSecondNext.add(next2);
+        next2.setBounds(50, 50, 100, 100);
+        panel4.add(panelForSecondNext, BorderLayout.SOUTH);
+
+        panel5 = new valutazioni();
+
         
 
         // Add panels to the frame and make panel1 visible by default
-        getContentPane().add(panel1, BorderLayout.CENTER);
+        add(panel1, BorderLayout.CENTER);
 
         button1.addActionListener(e -> {
             button1.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
@@ -138,12 +110,7 @@ public class MainFrame extends JFrame {
             remove(panel3);
             remove(panel4);
             remove(panel5);
-            
-          
             add(panel1, BorderLayout.CENTER);
-            
-           
-            
             revalidate();
             repaint();
         });
@@ -170,10 +137,16 @@ public class MainFrame extends JFrame {
             add(panel3, BorderLayout.CENTER);
             revalidate();
             repaint();
+            Tartaruga.toFill = true;
+            System.out.println(Tartaruga.nome);
+            System.out.println(Tartaruga.targhetta);
+            System.out.println(Tartaruga.vasca);
+            System.out.println(Tartaruga.sede);
+            
         });
 
 
-        bottone.addActionListener(e -> {
+        next1.addActionListener(e -> {
             button2.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
             button1.setBorder(null);
             button3.setBorder(null);
@@ -186,23 +159,17 @@ public class MainFrame extends JFrame {
         });
 
 
-        bottone35.addActionListener(e -> {
+        next2.addActionListener(e -> {
             button2.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
             button1.setBorder(null);
             button3.setBorder(null);
-            remove(panel4);
+            remove(panel2);
             remove(panel3);
-            add(panel2, BorderLayout.CENTER);
+            remove(panel4);
+            add(panel5, BorderLayout.CENTER);
             revalidate();
             repaint();
-            System.out.println(Tartaruga.nome);
-            System.out.println(Tartaruga.targhetta);
-            System.out.println(Tartaruga.vasca);
-            System.out.println(Tartaruga.sede);
         });
-
-        
-        panel5 = new valutazioni(this);
         
 
         setLocationRelativeTo(null);
@@ -210,6 +177,4 @@ public class MainFrame extends JFrame {
         setVisible(true);
     }
 
-
-    
 }

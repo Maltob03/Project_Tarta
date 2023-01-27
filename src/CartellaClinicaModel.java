@@ -1,9 +1,4 @@
-public class Tartaruga {
-    public static boolean toFill;
-    public static String nome;
-    public static String targhetta;
-    public static int sede;
-    public static int vasca;
+public class CartellaClinicaModel {
     public static String specie;
     public static String lunghezza;
     public static String larghezza;

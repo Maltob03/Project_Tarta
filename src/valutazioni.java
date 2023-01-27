@@ -1,4 +1,5 @@
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -9,8 +10,7 @@ public class valutazioni extends JPanel {
 	static int vasca;
 	boolean isPresented;
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public valutazioni(MainFrame mframe) {
+	public valutazioni() {
 		
         setLayout(new BorderLayout());
 
@@ -34,6 +34,7 @@ public class valutazioni extends JPanel {
 		login.add(insertTitle);
 
 		Button insert_tarta_button = new Button("Insert");
+		/* 
 		insert_tarta_button.addActionListener(new ActionListener() {
 			private Component frame;
 
@@ -43,6 +44,7 @@ public class valutazioni extends JPanel {
                  return;
 			}
 		});
+*/
 		insert_tarta_button.setBounds(280, 529, 100, 30);
 		login.add(insert_tarta_button);
 

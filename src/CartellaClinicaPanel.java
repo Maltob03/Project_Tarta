@@ -1,3 +1,4 @@
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -9,11 +10,11 @@ public class CartellaClinicaPanel extends JPanel {
     static int vasca;
     boolean isPresented;
 
-    public CartellaClinicaPanel(MainFrame mframe) {
+    public CartellaClinicaPanel() {
 
         setLayout(new BorderLayout());
 
-        Database db = new Database();
+        //Database db = new Database();
 
         ImageIcon background_image = new ImageIcon("bg.jpg");
         JLabel background = new JLabel("", background_image, JLabel.CENTER);
@@ -63,9 +64,11 @@ public class CartellaClinicaPanel extends JPanel {
         textField_6.setBounds(45, 223, 226, 44);
         login.add(textField_6);
 
+
         Button insert_tarta_button = new Button("Avanti");
         insert_tarta_button.setBounds(300, 423, 100, 30);
         login.add(insert_tarta_button);
+       
 
         insert_tarta_button.addActionListener(new ActionListener() {
             private Component frame;
@@ -81,13 +84,6 @@ public class CartellaClinicaPanel extends JPanel {
                     JOptionPane.showMessageDialog(this.frame, "Inserisci un ID", "Errore", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
-
-                
-                setVisible(false);
-                mframe.setContentPane(mframe.panel5);
-                mframe.panel5.setVisible(true);
-                
-                mframe.getContentPane().add(mframe.toolbar, BorderLayout.NORTH);
                 
                 // QUERY THAT PASS THE QUERY TO THE DB METHOD
 

@@ -1,80 +1,92 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 
 public class ViewResultFrame extends JFrame {
 
-    String nome;
-    String targhetta;
-    int sede;
-    int vasca;
+  private SearchResultPanel panel1;
+  private ViewCartellaClinicaPanel panel2;
+  private ViewStatoSalutePanel panel3;
 
-    public ViewResultFrame(String nome, String targhetta, int sede, int vasca) {
-        this.nome = nome;
-        this.targhetta = targhetta;
-        this.sede = sede;
-        this.vasca = vasca;
-
-        setLayout(new BorderLayout());
-
-        ImageIcon background_image = new ImageIcon("bg.jpg");
-        JLabel background = new JLabel("", background_image, JLabel.CENTER);
-        add(background, BorderLayout.CENTER);
-
-        JPanel login = new JPanel();
-        login.setLayout(null);
-        login.setSize(400, 1600);
-        login.setBackground(new Color(255, 255, 255, 180));
-        login.setBounds(50, 50, 700, 600);
-
-        background.add(login);
-
-        JLabel insertTitle = new JLabel("Inserisci una tartaruga");
-        insertTitle.setFont(new Font("Dialog", Font.BOLD, 24));
-        insertTitle.setBounds(200, -31, 327, 154);
-        login.add(insertTitle);
-
-        JLabel nomeLabel = new JLabel("Nome : " + nome);
-        nomeLabel.setFont(new Font("Dialog", Font.BOLD, 24));
-        nomeLabel.setBounds(70, 150, 327, 154);
-        login.add(nomeLabel);
-
-        /* */
-        JLabel targhettaLabel = new JLabel("Targhetta : " + targhetta);
-        targhettaLabel.setFont(new Font("Dialog", Font.BOLD, 24));
-        targhettaLabel.setBounds(70, 200, 327, 154);
-        login.add(targhettaLabel);
-
-        JLabel sedeLabel = new JLabel("Sede : " + String.valueOf(sede));
-        sedeLabel.setFont(new Font("Dialog", Font.BOLD, 24));
-        sedeLabel.setBounds(70, 250, 327, 154);
-        login.add(sedeLabel);
-
-        JLabel vascaLabel = new JLabel("Vasca : " + String.valueOf(vasca));
-        vascaLabel.setFont(new Font("Dialog", Font.BOLD, 24));
-        vascaLabel.setBounds(70, 300, 327, 154);
-        login.add(vascaLabel);
-
-        // Button
-        Button back_button = new Button("Back");
-        back_button.setBounds(300, 500, 100, 30);
-        back_button.setBackground(new Color(18, 49, 149));
-        login.add(back_button);
+  String nome;
+  String targhetta;
+  int sede;
+  int vasca;
+  //String Specie ecc...
+//Qua metto tutto nel costruttore tipo dimensione, coda ecc e lo distribuisco ai vari panel
+  public ViewResultFrame(String nome, String targhetta, int sede, int vasca) {
+      
+      setTitle("Project Tarta");
+      setSize(800, 800);
+      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      setLayout(new BorderLayout());
+      setResizable(false);
+      
 
 
-        back_button.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-              setVisible(false);
-              //new SearchFrame().setVisible(true);
-            }
-          });
+      JPanel panelForNextResult = new JPanel();
+      JPanel panelForSecondNext = new JPanel();
 
 
-          setTitle("Project Tarta");
-          setSize(800, 800);
-          setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-          setVisible(true);
+
+      // Panel 1
+      panel1 = new SearchResultPanel(nome,targhetta,sede,vasca);
+      panel1.add(panelForNextResult, BorderLayout.SOUTH);
+      JButton NextResult = new JButton("NEXT 1");
+      NextResult.setBackground(new Color(0, 240, 240));
+      NextResult.setPreferredSize(new Dimension(80, 40));
+      NextResult.setBounds(50, 50, 100, 100);
+      panelForNextResult.add(NextResult);
+
+
+      panel2 = new ViewCartellaClinicaPanel("prova", "prova", 1, 1, "prova", "prova");
+      panel2.add(panelForSecondNext, BorderLayout.SOUTH);
+      JButton NextResult2 = new JButton("NEXT 2");
+      NextResult2.setBackground(new Color(0, 240, 240));
+      NextResult2.setPreferredSize(new Dimension(80, 40));
+      NextResult2.setBounds(50, 50, 100, 100);
+      panelForSecondNext.add(NextResult2);
+
+      panel3 = new ViewStatoSalutePanel("prova", "prova", 1, 1, "prova", "prova", "prova");
+      
+
+      // Add panels to the frame and make panel1 visible by default
+      add(panel1, BorderLayout.CENTER);
+
+
+      NextResult.addActionListener(e -> {
+          remove(panel1);
+          //remove(panel3);
+          add(panel2, BorderLayout.CENTER);
+          revalidate();
+          repaint();
+          
+      });
+
+      NextResult2.addActionListener(e -> {
+        remove(panel2);
+        //remove(panel3);
+        add(panel3, BorderLayout.CENTER);
+        revalidate();
+        repaint();
+        
+    });
+
+/* 
+      next2.addActionListener(e -> {
+          button2.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
+          button1.setBorder(null);
+          button3.setBorder(null);
+          remove(panel2);
+          remove(panel3);
+          remove(panel4);
+          add(panel5, BorderLayout.CENTER);
+          revalidate();
+          repaint();
+      });
+*/
+
+      setLocationRelativeTo(null);
+      setVisible(true);
   }
+
 }
