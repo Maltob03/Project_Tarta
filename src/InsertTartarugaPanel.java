@@ -21,13 +21,13 @@ public class InsertTartarugaPanel extends JPanel {
         login.setLayout(null);
         login.setSize(400, 1600);
         login.setBackground(new Color(255, 255, 255, 180));
-        login.setBounds(50, 50, 700, 600);
+        login.setBounds(50, 90, 700, 470);
 
         background.add(login);
 
         JLabel insertTitle = new JLabel("Inserisci una tartaruga");
         insertTitle.setFont(new Font("Dialog", Font.BOLD, 24));
-        insertTitle.setBounds(200, -31, 327, 154);
+        insertTitle.setBounds(210, -32, 327, 154);
         login.add(insertTitle);
 
         JTextField textField = new JTextField("Nome");

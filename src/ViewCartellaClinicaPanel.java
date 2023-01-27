@@ -22,7 +22,7 @@ public class ViewCartellaClinicaPanel extends JPanel {
         login.setLayout(null);
         login.setSize(400, 1600);
         login.setBackground(new Color(255, 255, 255, 180));
-        login.setBounds(50, 50, 700, 600);
+        login.setBounds(50, 50, 700, 550);
 
         background.add(login);
 

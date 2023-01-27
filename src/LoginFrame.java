@@ -15,7 +15,7 @@ public class LoginFrame extends JFrame {
         JPanel heading;
         heading = new JPanel ();
         heading.setBackground (new Color (0,0,0,0));
-        heading.setBounds (0,250,800,50);
+        heading.setBounds (0,260,800,50);
         JLabel name = new JLabel ("Welcome to Project Tarta");
         //name.setBounds(1,25,1,1);
         name.setFont(f);
@@ -26,7 +26,7 @@ public class LoginFrame extends JFrame {
         JPanel login = new JPanel (); login.setLayout (null);
         login.setSize (400,350);
         login.setBackground (new Color (0,0,0, 0));
-        login. setBounds (200,350, 400,350);
+        login.setBounds (200,350, 400,350);
 
         //username
         JTextField username = new JTextField("matteo");

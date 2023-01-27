@@ -25,10 +25,13 @@ public class SearchPanel extends JPanel {
         name.setForeground(Color.WHITE);
         background.add(name);
 
+        
+
+        
         JTextField research = new JTextField("");
         research.setBounds (240, 380, 300, 50);
         research.setBackground(new Color(190, 208, 244));
-        research.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+        research.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,8,0,0));
         background.add(research);
 
         Button login_button = new Button ("Go");

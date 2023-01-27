@@ -24,7 +24,7 @@ public class SearchResultPanel extends JPanel {
         login.setLayout(null);
         login.setSize(400, 1600);
         login.setBackground(new Color(255, 255, 255, 180));
-        login.setBounds(50, 50, 700, 600);
+        login.setBounds(50, 50, 700, 550);
 
         background.add(login);
 
@@ -66,6 +66,7 @@ public class SearchResultPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
               setVisible(false);
+            
               //new SearchFrame().setVisible(true);
             }
           });
