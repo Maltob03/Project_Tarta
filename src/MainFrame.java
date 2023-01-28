@@ -7,8 +7,8 @@ public class MainFrame extends JFrame {
     private SearchPanel panel1;
     private InsertTartarugaPanel panel2;
     private SearchResultPanel panel3;
-    private CartellaClinicaPanel panel4;
-    private valutazioni panel5;
+    private InsertCartellaClinicaPanel panel4;
+    private InsertValutazionePanel panel5;
 
     public MainFrame() {
         
@@ -87,7 +87,7 @@ public class MainFrame extends JFrame {
 
 
         //panel 4
-        panel4 = new CartellaClinicaPanel();
+        panel4 = new InsertCartellaClinicaPanel();
         JButton next2 = new JButton("NEXT 2");
         next2.setBackground(new Color(0, 240, 240));
         next2.setPreferredSize(new Dimension(80, 40));
@@ -95,7 +95,7 @@ public class MainFrame extends JFrame {
         next2.setBounds(50, 50, 100, 100);
         panel4.add(panelForSecondNext, BorderLayout.SOUTH);
 
-        panel5 = new valutazioni();
+        panel5 = new InsertValutazionePanel();
 
         
 
@@ -137,11 +137,6 @@ public class MainFrame extends JFrame {
             add(panel3, BorderLayout.CENTER);
             revalidate();
             repaint();
-            Tartaruga.toFill = true;
-            System.out.println(Tartaruga.nome);
-            System.out.println(Tartaruga.targhetta);
-            System.out.println(Tartaruga.vasca);
-            System.out.println(Tartaruga.sede);
             
         });
 

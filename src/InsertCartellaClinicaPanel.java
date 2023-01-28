@@ -1,16 +1,14 @@
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class CartellaClinicaPanel extends JPanel {
+public class InsertCartellaClinicaPanel extends JPanel {
     String nome;
     String targhetta;
-    static int sede;
-    static int vasca;
-    boolean isPresented;
+    int sede;
+    int vasca;
 
-    public CartellaClinicaPanel() {
+    public InsertCartellaClinicaPanel() {
 
         setLayout(new BorderLayout());
 

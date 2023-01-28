@@ -1,17 +1,16 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 
 public class ViewStatoSalutePanel extends JPanel { 
-    String testa;
-    String occhi;
+    int testa;
+    int occhi;
     int naso;
     int becco;
-    String collo;
-    String pinne;
-    String coda;
+    int collo;
+    int pinne;
+    int coda;
 
-    public ViewStatoSalutePanel(String testa, String occhi, int naso, int becco, String collo, String pinne, String coda) {
+    public ViewStatoSalutePanel(int testa, int occhi, int naso, int becco, int collo, int pinne, int coda) {
 
         setLayout(new BorderLayout());
 
@@ -32,13 +31,13 @@ public class ViewStatoSalutePanel extends JPanel {
         insertTitle.setBounds(250, -31, 327, 154);
         login.add(insertTitle);
 
-        JLabel testaLabel = new JLabel("Testa : " + testa);
+        JLabel testaLabel = new JLabel("Testa : " + String.valueOf(testa));
         testaLabel.setFont(new Font("Dialog", Font.BOLD, 24));
         testaLabel.setBounds(70, 104, 327, 154);
         login.add(testaLabel);
 
         /* */
-        JLabel occhiLabel = new JLabel("Occhi : " + occhi);
+        JLabel occhiLabel = new JLabel("Occhi : " + String.valueOf(occhi));
         occhiLabel.setFont(new Font("Dialog", Font.BOLD, 24));
         occhiLabel.setBounds(70, 154, 327, 154);
         login.add(occhiLabel);
@@ -53,22 +52,22 @@ public class ViewStatoSalutePanel extends JPanel {
         beccoLabel.setBounds(70, 254, 327, 154);
         login.add(beccoLabel);
 
-        JLabel colloLabel = new JLabel("Collo : " + collo);
+        JLabel colloLabel = new JLabel("Collo : " + String.valueOf(collo));
         colloLabel.setFont(new Font("Dialog", Font.BOLD, 24));
         colloLabel.setBounds(400, 104, 327, 154);
         login.add(colloLabel);
 
-        JLabel pinneLabel = new JLabel("pinne : " + pinne);
+        JLabel pinneLabel = new JLabel("pinne : " + String.valueOf(pinne));
         pinneLabel.setFont(new Font("Dialog", Font.BOLD, 24));
         pinneLabel.setBounds(400, 154, 327, 154);
         login.add(pinneLabel);
 
-        JLabel codaLabel = new JLabel("Coda : " + coda);
+        JLabel codaLabel = new JLabel("Coda : " + String.valueOf(coda));
         codaLabel.setFont(new Font("Dialog", Font.BOLD, 24));
         codaLabel.setBounds(400, 204, 327, 154);
         login.add(codaLabel);
         
-
+       /* 
         // Button
         Button back_button = new Button("Back");
         back_button.setBounds(300, 450, 100, 30);
@@ -84,6 +83,7 @@ public class ViewStatoSalutePanel extends JPanel {
               //new SearchFrame().setVisible(true);
             }
           });
+          */
 
     }
 }

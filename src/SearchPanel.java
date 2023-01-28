@@ -5,7 +5,6 @@ import java.awt.event.*;
 
 public class SearchPanel extends JPanel {
     String id;
-    boolean isPresented;
 
     public SearchPanel() {
 
@@ -25,9 +24,6 @@ public class SearchPanel extends JPanel {
         name.setForeground(Color.WHITE);
         background.add(name);
 
-        
-
-        
         JTextField research = new JTextField("");
         research.setBounds (240, 380, 300, 50);
         research.setBackground(new Color(190, 208, 244));

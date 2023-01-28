@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class InsertTartarugaPanel extends JPanel {
-    public JToolBar toolbar;
+    
 
     public InsertTartarugaPanel() {
 
@@ -11,7 +11,7 @@ public class InsertTartarugaPanel extends JPanel {
 
 
         //Database db = new Database();
-        Controller nc = new Controller();
+        //Controller nc = new Controller();
 
         ImageIcon background_image = new ImageIcon("bg.jpg");
         JLabel background = new JLabel("", background_image, JLabel.CENTER);
@@ -72,7 +72,7 @@ public class InsertTartarugaPanel extends JPanel {
                     return;
                 }
 
-                nc.fillTarta(textField.getText(), textField_1.getText(), Integer.parseInt(textField_3.getText()),Integer.parseInt(textField_4.getText()));
+                //nc.fillTarta(textField.getText(), textField_1.getText(), Integer.parseInt(textField_3.getText()),Integer.parseInt(textField_4.getText()));
                 //db.inserisciTartaruga(Tartaruga.nome, Tartaruga.targhetta, Tartaruga.sede, Tartaruga.vasca); 
             }
         });

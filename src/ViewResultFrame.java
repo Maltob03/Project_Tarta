@@ -7,17 +7,11 @@ public class ViewResultFrame extends JFrame {
   private ViewCartellaClinicaPanel panel2;
   private ViewStatoSalutePanel panel3;
 
-  String nome;
-  String targhetta;
-  int sede;
-  int vasca;
-  //String Specie ecc...
-//Qua metto tutto nel costruttore tipo dimensione, coda ecc e lo distribuisco ai vari panel
-  public ViewResultFrame(String nome, String targhetta, int sede, int vasca) {
+  
+  public ViewResultFrame(String nome, String targhetta, int sede, int vasca,String specie, int lunghezza, int larghezza, int peso, String luogo, int testa, int occhi, int naso, int becco, int collo, int pinne, int coda) {
       
       setTitle("Project Tarta");
       setSize(800, 800);
-      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       setLayout(new BorderLayout());
       setResizable(false);
       
@@ -37,8 +31,8 @@ public class ViewResultFrame extends JFrame {
       NextResult.setBounds(50, 50, 100, 100);
       panelForNextResult.add(NextResult);
 
-
-      panel2 = new ViewCartellaClinicaPanel("prova", "prova", 1, 1, "prova", "prova");
+      //panel2
+      panel2 = new ViewCartellaClinicaPanel(specie, larghezza, lunghezza, peso, luogo, "prova");
       panel2.add(panelForSecondNext, BorderLayout.SOUTH);
       JButton NextResult2 = new JButton("NEXT 2");
       NextResult2.setBackground(new Color(0, 240, 240));
@@ -46,7 +40,8 @@ public class ViewResultFrame extends JFrame {
       NextResult2.setBounds(50, 50, 100, 100);
       panelForSecondNext.add(NextResult2);
 
-      panel3 = new ViewStatoSalutePanel("prova", "prova", 1, 1, "prova", "prova", "prova");
+      //panel3
+      panel3 = new ViewStatoSalutePanel(testa, occhi, naso, becco, collo, pinne, coda);
       
 
       // Add panels to the frame and make panel1 visible by default
@@ -85,7 +80,6 @@ public class ViewResultFrame extends JFrame {
       });
 */
 
-      setLocationRelativeTo(null);
       setVisible(true);
   }
 

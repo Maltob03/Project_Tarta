@@ -1,16 +1,15 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 
 public class ViewCartellaClinicaPanel extends JPanel { 
     String specie;
-    String larghezza;
+    int larghezza;
     int lunghezza;
     int peso;
     String luogo;
     String data;
 
-    public ViewCartellaClinicaPanel(String specie, String larghezza, int lunghezza, int peso, String luogo, String data) {
+    public ViewCartellaClinicaPanel(String specie, int larghezza, int lunghezza, int peso, String luogo, String data) {
 
         setLayout(new BorderLayout());
 
@@ -23,7 +22,7 @@ public class ViewCartellaClinicaPanel extends JPanel {
         login.setSize(400, 1600);
         login.setBackground(new Color(255, 255, 255, 180));
         login.setBounds(50, 50, 700, 550);
-
+        
         background.add(login);
 
         JLabel insertTitle = new JLabel("Inserisci una tartaruga");
@@ -37,7 +36,7 @@ public class ViewCartellaClinicaPanel extends JPanel {
         login.add(nomeLabel);
 
         /* */
-        JLabel larghezzaLabel = new JLabel("Larghezza : " + larghezza);
+        JLabel larghezzaLabel = new JLabel("Larghezza : " + String.valueOf(larghezza));
         larghezzaLabel.setFont(new Font("Dialog", Font.BOLD, 24));
         larghezzaLabel.setBounds(70, 200, 327, 154);
         login.add(larghezzaLabel);
@@ -62,7 +61,7 @@ public class ViewCartellaClinicaPanel extends JPanel {
         dataLabel.setBounds(400, 200, 327, 154);
         login.add(dataLabel);
         
-
+/* 
         // Button
         Button back_button = new Button("Back");
         back_button.setBounds(300, 500, 100, 30);
@@ -78,6 +77,6 @@ public class ViewCartellaClinicaPanel extends JPanel {
               //new SearchFrame().setVisible(true);
             }
           });
-
+*/ 
     }
 }

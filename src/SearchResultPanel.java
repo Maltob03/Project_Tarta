@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 
 public class SearchResultPanel extends JPanel {
     String nome;
@@ -53,7 +52,7 @@ public class SearchResultPanel extends JPanel {
         vascaLabel.setFont(new Font("Dialog", Font.BOLD, 24));
         vascaLabel.setBounds(70, 300, 327, 154);
         login.add(vascaLabel);
-
+/* 
         // Button
         Button back_button = new Button("Back");
         back_button.setBounds(300, 500, 100, 30);
@@ -61,15 +60,15 @@ public class SearchResultPanel extends JPanel {
         login.add(back_button);
 
 
-        back_button.addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent e) {
               setVisible(false);
-            
               //new SearchFrame().setVisible(true);
             }
           });
+
+          */
+
 
     }
 }
