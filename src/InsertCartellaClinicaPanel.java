@@ -3,16 +3,13 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class InsertCartellaClinicaPanel extends JPanel {
-    String nome;
-    String targhetta;
-    int sede;
-    int vasca;
 
     public InsertCartellaClinicaPanel() {
 
         setLayout(new BorderLayout());
 
-        //Database db = new Database();
+        Database db = new Database();
+        Controller nc = new Controller();
 
         ImageIcon background_image = new ImageIcon("bg.jpg");
         JLabel background = new JLabel("", background_image, JLabel.CENTER);
@@ -69,76 +66,22 @@ public class InsertCartellaClinicaPanel extends JPanel {
        
 
         insert_tarta_button.addActionListener(new ActionListener() {
-            private Component frame;
+            //private Component frame;
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                nome = textField.getText();
-                targhetta = textField_1.getText();
-                sede = Integer.parseInt(textField_3.getText());
-                vasca = Integer.parseInt(textField_4.getText());
-
-                if (nome.isEmpty()) {
-                    JOptionPane.showMessageDialog(this.frame, "Inserisci un ID", "Errore", JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
-                
-                // QUERY THAT PASS THE QUERY TO THE DB METHOD
-
-               // db.inserisciTartaruga(nome, targhetta, sede, vasca);
-                //JOptionPane.showMessageDialog(this.frame, "Operation success correctly");
+                CartellaClinicaModel cartellaToPass = nc.fillCartellaClinica(textField.getText(),Integer.parseInt(textField_1.getText()),Integer.parseInt(textField_3.getText()),Integer.parseInt(textField_4.getText()),textField_5.getText(),textField_6.getText());
+                db.inserisciCartellaClinica(cartellaToPass);
                 return;
             }
         });
 
 
-        textField.addFocusListener(new FocusListener() {
-            public void focusGained(FocusEvent e) {
-                textField.setText("");
-            }
-
-            public void focusLost(FocusEvent e) {
-            }
-        });
-        textField_1.addFocusListener(new FocusListener() {
-            public void focusGained(FocusEvent e) {
-                textField_1.setText("");
-            }
-
-            public void focusLost(FocusEvent e) {
-            }
-        });
-        textField_3.addFocusListener(new FocusListener() {
-            public void focusGained(FocusEvent e) {
-                textField_3.setText("");
-            }
-
-            public void focusLost(FocusEvent e) {
-            }
-        });
-        textField_4.addFocusListener(new FocusListener() {
-            public void focusGained(FocusEvent e) {
-                textField_4.setText("");
-            }
-
-            public void focusLost(FocusEvent e) {
-            }
-        });
-        textField_5.addFocusListener(new FocusListener() {
-            public void focusGained(FocusEvent e) {
-                textField_5.setText("");
-            }
-
-            public void focusLost(FocusEvent e) {
-            }
-        });
-        textField_6.addFocusListener(new FocusListener() {
-            public void focusGained(FocusEvent e) {
-                textField_6.setText("");
-            }
-
-            public void focusLost(FocusEvent e) {
-            }
-        });
+        nc.clearTextField(textField);
+        nc.clearTextField(textField_1);
+        nc.clearTextField(textField_3);
+        nc.clearTextField(textField_4);
+        nc.clearTextField(textField_5);
+        nc.clearTextField(textField_6);
     }
 }

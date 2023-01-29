@@ -24,42 +24,27 @@ public class Database {
       while (rs.next()) {
 
         // Display values
-        String nome = rs.getString("nome");
-        turtle.setNome(nome);
-        String targhetta = rs.getString("targhetta");
-        turtle.setTarghetta(targhetta);
-        int sede = rs.getInt("id_sede");
-        turtle.setSede(sede);
-        int vasca = rs.getInt("id_vasca");
-        turtle.setVasca(vasca);
+        turtle.setNome(rs.getString("nome"));
+        turtle.setTarghetta(rs.getString("targhetta"));
+        turtle.setSede(rs.getInt("id_sede"));
+        turtle.setVasca(rs.getInt("id_vasca"));
 
-
-        String specie = rs.getString("specie");
-        cartella.setSpecie(specie);
-        int lunghezza = rs.getInt("lunghezza");
-        cartella.setLunghezza(lunghezza);
-        int larghezza = rs.getInt("larghezza");
-        cartella.setLarghezza(larghezza);
-        int peso = rs.getInt("peso");
-        cartella.setPeso(peso);
-        String luogo = rs.getString("luogo_di_ritrovamento");
-        cartella.setLuogo(luogo);
 
         
-        int testa = rs.getInt("testa");
-        salute.setTesta(testa);
-        int occhi = rs.getInt("occhi");
-        salute.setOcchi(occhi);
-        int naso = rs.getInt("naso");
-        salute.setNaso(naso);
-        int becco = rs.getInt("becco");
-        salute.setBecco(becco);
-        int collo = rs.getInt("collo");
-        salute.setCollo(collo);
-        int pinne = rs.getInt("pinne");
-        salute.setPinne(pinne);
-        int coda = rs.getInt("coda");
-        salute.setCoda(coda);
+        cartella.setSpecie(rs.getString("specie"));
+        cartella.setLunghezza( rs.getInt("lunghezza"));
+        cartella.setLarghezza(rs.getInt("larghezza"));
+        cartella.setPeso(rs.getInt("peso"));
+        cartella.setLuogo(rs.getString("luogo_di_ritrovamento"));
+
+        
+        salute.setTesta(rs.getInt("testa"));
+        salute.setOcchi(rs.getInt("occhi"));
+        salute.setNaso(rs.getInt("naso"));
+        salute.setBecco(rs.getInt("becco"));
+        salute.setCollo(rs.getInt("collo"));
+        salute.setPinne(rs.getInt("pinne"));
+        salute.setCoda(rs.getInt("coda"));
 
 
         new ViewResultFrame(turtle.getNome(), turtle.getTarghetta(), turtle.getSede(), turtle.getVasca(), cartella.getSpecie(), cartella.getLunghezza(),cartella.getLarghezza(),cartella.getPeso(),cartella.getLuogo(),salute.getTesta(),salute.getOcchi(),salute.getNaso(),salute.getBecco(),salute.getCollo(),salute.getPinne(),salute.getCoda()).setVisible(true);
@@ -73,9 +58,9 @@ public class Database {
 
   }
 
-  public void inserisciTartaruga(String nome, String targhetta, int sede, int vasca) {
+  public void inserisciTartaruga(Tartaruga tartaruga) {
     final String QUERY = "INSERT INTO tartaruga(id_tartaruga,nome,targhetta,id_sede,id_vasca)VALUES(12," + "'"
-        + nome + "'" + "," + "'" + targhetta + "'" + "," + sede + "," + vasca + ");";
+        + tartaruga.getNome() + "'" + "," + "'" + tartaruga.getTarghetta() + "'" + "," + tartaruga.getSede() + "," + tartaruga.getVasca() + ");";
     try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(QUERY);) {
@@ -86,11 +71,10 @@ public class Database {
 
   }
  //ce ne vuole un altra per lo stato di salute
-  public void inserisciCartellaClinica(String specie, float lunghezza, float larghezza, float peso, String luogo,
-      String data) {
+  public void inserisciCartellaClinica(CartellaClinicaModel cartella) {
     final String QUERY = "INSERT INTO Cartella_Clinica (id_cartella_clinica,specie,lunghezza,larghezza,peso,luogo_di_ritrovamento,data_di_ritrovamento,id_tartaruga,id_)VALUES(12,"
         + "'"
-        + specie + "'" + "," + "'" + lunghezza + "'" + "," + larghezza + "," + peso + "," + luogo + "," + "," + data
+        + cartella.getSpecie() + "'" + "," + "'" + cartella.getLunghezza() + "'" + "," + cartella.getLarghezza() + "," + cartella.getPeso() + "," + cartella.getLuogo() + "," + "," + cartella.getData()
         + ");";
     try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
         Statement stmt = conn.createStatement();

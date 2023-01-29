@@ -9,7 +9,7 @@ public class ViewResultFrame extends JFrame {
 
   
   public ViewResultFrame(String nome, String targhetta, int sede, int vasca,String specie, int lunghezza, int larghezza, int peso, String luogo, int testa, int occhi, int naso, int becco, int collo, int pinne, int coda) {
-      
+      Controller nc = new Controller();
       setTitle("Project Tarta");
       setSize(800, 800);
       setLayout(new BorderLayout());
@@ -49,36 +49,15 @@ public class ViewResultFrame extends JFrame {
 
 
       NextResult.addActionListener(e -> {
-          remove(panel1);
-          //remove(panel3);
-          add(panel2, BorderLayout.CENTER);
-          revalidate();
-          repaint();
+          nc.goToViewCartellaClinica(panel1, panel2, panel3, this);
           
       });
 
       NextResult2.addActionListener(e -> {
-        remove(panel2);
-        //remove(panel3);
-        add(panel3, BorderLayout.CENTER);
-        revalidate();
-        repaint();
+        nc.goToViewStatoSalute(panel1, panel2, panel3, this);
         
     });
 
-/* 
-      next2.addActionListener(e -> {
-          button2.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
-          button1.setBorder(null);
-          button3.setBorder(null);
-          remove(panel2);
-          remove(panel3);
-          remove(panel4);
-          add(panel5, BorderLayout.CENTER);
-          revalidate();
-          repaint();
-      });
-*/
 
       setVisible(true);
   }

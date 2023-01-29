@@ -17,6 +17,7 @@ public class MainFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
         setResizable(false);
+        Controller nc = new Controller();
         // Toolbar
         // Panel for button
         JPanel panelForButton = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -67,7 +68,7 @@ public class MainFrame extends JFrame {
 
         // Panel 2
         panel2 = new InsertTartarugaPanel();
-        JButton next1 = new JButton("NEXT 1");
+        JButton next1 = new JButton("Cartella CLinica");
         next1.setBackground(new Color(0, 240, 240));
         next1.setPreferredSize(new Dimension(80, 40));
         next1.setBounds(50, 50, 100, 100);
@@ -88,13 +89,14 @@ public class MainFrame extends JFrame {
 
         //panel 4
         panel4 = new InsertCartellaClinicaPanel();
-        JButton next2 = new JButton("NEXT 2");
+        JButton next2 = new JButton("Stato Salute");
         next2.setBackground(new Color(0, 240, 240));
         next2.setPreferredSize(new Dimension(80, 40));
         panelForSecondNext.add(next2);
         next2.setBounds(50, 50, 100, 100);
         panel4.add(panelForSecondNext, BorderLayout.SOUTH);
 
+        //panel 5
         panel5 = new InsertValutazionePanel();
 
         
@@ -103,67 +105,26 @@ public class MainFrame extends JFrame {
         add(panel1, BorderLayout.CENTER);
 
         button1.addActionListener(e -> {
-            button1.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
-            button2.setBorder(null);
-            button3.setBorder(null);
-            remove(panel2);
-            remove(panel3);
-            remove(panel4);
-            remove(panel5);
-            add(panel1, BorderLayout.CENTER);
-            revalidate();
-            repaint();
+            nc.goToSearch(button1, button2, button3, panel1, panel2, panel3, panel4, panel5, this);
         });
         button2.addActionListener(e -> {
-            button1.setBorder(null);
-            button3.setBorder(null);
-            button2.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
-            remove(panel1);
-            remove(panel3);
-            remove(panel4);
-            remove(panel5);
-            add(panel2, BorderLayout.CENTER);
-            revalidate();
-            repaint();
+            nc.goToInsert(button1, button2, button3, panel1, panel2, panel3, panel4, panel5, this);
         });
         button3.addActionListener(e -> {
-            button1.setBorder(null);
-            button2.setBorder(null);
-            button3.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
-            remove(panel1);
-            remove(panel2);
-            remove(panel4);
-            remove(panel5);
-            add(panel3, BorderLayout.CENTER);
-            revalidate();
-            repaint();
+            nc.goToStatistics(button1, button2, button3, panel1, panel2, panel3, panel4, panel5, this);
+
             
         });
 
 
         next1.addActionListener(e -> {
-            button2.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
-            button1.setBorder(null);
-            button3.setBorder(null);
-            remove(panel2);
-            remove(panel3);
-            add(panel4, BorderLayout.CENTER);
-            revalidate();
-            repaint();
+            nc.goToInsertCartellaClinica(button1, button2, button3, panel1, panel2, panel3, panel4, panel5, this);
             
         });
 
 
         next2.addActionListener(e -> {
-            button2.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
-            button1.setBorder(null);
-            button3.setBorder(null);
-            remove(panel2);
-            remove(panel3);
-            remove(panel4);
-            add(panel5, BorderLayout.CENTER);
-            revalidate();
-            repaint();
+            nc.goToInsertStatoSalute(button1, button2, button3, panel1, panel2, panel3, panel4, panel5, this);
         });
         
 

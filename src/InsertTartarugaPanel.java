@@ -10,8 +10,8 @@ public class InsertTartarugaPanel extends JPanel {
         setLayout(new BorderLayout());
 
 
-        //Database db = new Database();
-        //Controller nc = new Controller();
+        Database db = new Database();
+        Controller nc = new Controller();
 
         ImageIcon background_image = new ImageIcon("bg.jpg");
         JLabel background = new JLabel("", background_image, JLabel.CENTER);
@@ -66,50 +66,24 @@ public class InsertTartarugaPanel extends JPanel {
         private Component frame;
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+
+                Tartaruga tartarugaToPass = nc.fillTartaruga(textField.getText(), textField_1.getText(),Integer.parseInt(textField_3.getText()),Integer.parseInt(textField_4.getText()));
+                db.inserisciTartaruga(tartarugaToPass); 
+                /* 
                 if (textField.getText().isEmpty()) {
                     JOptionPane.showMessageDialog(this.frame, "Inserisci un ID", "Errore", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
-
-                //nc.fillTarta(textField.getText(), textField_1.getText(), Integer.parseInt(textField_3.getText()),Integer.parseInt(textField_4.getText()));
-                //db.inserisciTartaruga(Tartaruga.nome, Tartaruga.targhetta, Tartaruga.sede, Tartaruga.vasca); 
+                */
+                
             }
         });
 
 
-        textField.addFocusListener(new FocusListener() {
-            public void focusGained(FocusEvent e) {
-                textField.setText("");
-            }
-
-            public void focusLost(FocusEvent e) {
-            }
-        });
-        textField_1.addFocusListener(new FocusListener() {
-            public void focusGained(FocusEvent e) {
-                textField_1.setText("");
-            }
-
-            public void focusLost(FocusEvent e) {
-            }
-        });
-        textField_3.addFocusListener(new FocusListener() {
-            public void focusGained(FocusEvent e) {
-                textField_3.setText("");
-            }
-
-            public void focusLost(FocusEvent e) {
-            }
-        });
-        textField_4.addFocusListener(new FocusListener() {
-            public void focusGained(FocusEvent e) {
-                textField_4.setText("");
-            }
-
-            public void focusLost(FocusEvent e) {
-            }
-       });
+        nc.clearTextField(textField);
+        nc.clearTextField(textField_1);
+        nc.clearTextField(textField_3);
+        nc.clearTextField(textField_4);
 
        
     }

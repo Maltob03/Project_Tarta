@@ -2,12 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ViewCartellaClinicaPanel extends JPanel { 
-    String specie;
-    int larghezza;
-    int lunghezza;
-    int peso;
-    String luogo;
-    String data;
+    
 
     public ViewCartellaClinicaPanel(String specie, int larghezza, int lunghezza, int peso, String luogo, String data) {
 

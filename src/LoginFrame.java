@@ -9,6 +9,8 @@ public class LoginFrame extends JFrame {
   static String pw;
   boolean isPresented = false;
     public LoginFrame(){
+
+      Controller nc = new Controller();
         // font
         Font f = new Font ("TYPE1_FONT", Font.BOLD, 30);
         //header
@@ -70,29 +72,12 @@ public class LoginFrame extends JFrame {
 
 			@Override
             public void actionPerformed(ActionEvent e) {
-              // Recupera l'ID e password inserito dall'utente
-              id = username.getText();
-              pw = password.getText();
-
-              
-              if (id.isEmpty()) {
-                JOptionPane.showMessageDialog(this.frame, "Inserisci un ID", "Errore", JOptionPane.ERROR_MESSAGE);
-                return;
-              }
-              
-              if (id.equals("matteo") && pw.equals("segreto")){
-                isPresented = true;
-                
-              }
-
-              if(isPresented == true){
+              boolean success;
+              success = nc.authenticationPerform(username.getText(), password.getText());
+              if(success == true ){
                 setVisible(false);
-                new MainFrame().setVisible(true);
               }
-              else {
-            	  JOptionPane.showMessageDialog(this.frame, "A chi cazzo vuoi fottere stronzo", "Pezzo di merda", JOptionPane.ERROR_MESSAGE);
-                  return;
-              }
+              // Recupera l'ID e password inserito dall'utente
             }
           });
           

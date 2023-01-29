@@ -52,22 +52,6 @@ public class SearchResultPanel extends JPanel {
         vascaLabel.setFont(new Font("Dialog", Font.BOLD, 24));
         vascaLabel.setBounds(70, 300, 327, 154);
         login.add(vascaLabel);
-/* 
-        // Button
-        Button back_button = new Button("Back");
-        back_button.setBounds(300, 500, 100, 30);
-        back_button.setBackground(new Color(18, 49, 149));
-        login.add(back_button);
-
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-              setVisible(false);
-              //new SearchFrame().setVisible(true);
-            }
-          });
-
-          */
 
 
     }

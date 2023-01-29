@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 public class InsertValutazionePanel extends JPanel {
 	String nome;
@@ -11,7 +12,7 @@ public class InsertValutazionePanel extends JPanel {
 		
         setLayout(new BorderLayout());
 
-		Database db = new Database();
+		//Database db = new Database();
 
 		ImageIcon background_image = new ImageIcon("bg.jpg");
 		JLabel background = new JLabel("", background_image, JLabel.CENTER);
@@ -26,14 +27,13 @@ public class InsertValutazionePanel extends JPanel {
 		background.add(login);
         
 
-/* 
+
 		JLabel insertTitle = new JLabel("Assegna delle valutazioni");
 		insertTitle.setBounds(201, -31, 327, 154);
 		insertTitle.setFont(new Font("Dialog", Font.BOLD, 24));
 		login.add(insertTitle);
 
 		Button insert_tarta_button = new Button("Insert");
-		/* 
 		insert_tarta_button.addActionListener(new ActionListener() {
 			private Component frame;
 
@@ -46,7 +46,7 @@ public class InsertValutazionePanel extends JPanel {
 
 		insert_tarta_button.setBounds(280, 529, 100, 30);
 		login.add(insert_tarta_button);
-		*/
+		
 
 		JLabel lblNewLabel = new JLabel("Testa");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));

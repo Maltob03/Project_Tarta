@@ -2,13 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ViewStatoSalutePanel extends JPanel { 
-    int testa;
-    int occhi;
-    int naso;
-    int becco;
-    int collo;
-    int pinne;
-    int coda;
 
     public ViewStatoSalutePanel(int testa, int occhi, int naso, int becco, int collo, int pinne, int coda) {
 
@@ -67,23 +60,6 @@ public class ViewStatoSalutePanel extends JPanel {
         codaLabel.setBounds(400, 204, 327, 154);
         login.add(codaLabel);
         
-       /* 
-        // Button
-        Button back_button = new Button("Back");
-        back_button.setBounds(300, 450, 100, 30);
-        back_button.setBackground(new Color(18, 49, 149));
-        login.add(back_button);
-
-
-        back_button.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-              setVisible(false);
-              //new SearchFrame().setVisible(true);
-            }
-          });
-          */
 
     }
 }
