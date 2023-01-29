@@ -3,7 +3,7 @@ import java.sql.*;
 public class InsertTartarugaDAO {
 
     public void inserisciTartaruga(Tartaruga tartaruga) {
-    final String QUERY = "INSERT INTO tartaruga(id_tartaruga,nome,targhetta,id_sede,id_vasca)VALUES(12," + "'"
+    final String QUERY = "INSERT INTO tartaruga(nome,targhetta,id_sede,id_vasca)VALUES(" + "'"
         + tartaruga.getNome() + "'" + "," + "'" + tartaruga.getTarghetta() + "'" + "," + tartaruga.getSede() + "," + tartaruga.getVasca() + ");";
     try (Connection conn = DriverManager.getConnection(Database.DB_URL, Database.USER, Database.PASS);
         Statement stmt = conn.createStatement();
