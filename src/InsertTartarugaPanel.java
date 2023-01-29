@@ -10,7 +10,7 @@ public class InsertTartarugaPanel extends JPanel {
         setLayout(new BorderLayout());
 
 
-        Database db = new Database();
+        InsertTartarugaDAO tDAO = new InsertTartarugaDAO();
         Controller nc = new Controller();
 
         ImageIcon background_image = new ImageIcon("bg.jpg");
@@ -68,7 +68,7 @@ public class InsertTartarugaPanel extends JPanel {
             public void actionPerformed(ActionEvent e) {
 
                 Tartaruga tartarugaToPass = nc.fillTartaruga(textField.getText(), textField_1.getText(),Integer.parseInt(textField_3.getText()),Integer.parseInt(textField_4.getText()));
-                db.inserisciTartaruga(tartarugaToPass); 
+                tDAO.inserisciTartaruga(tartarugaToPass); 
                 /* 
                 if (textField.getText().isEmpty()) {
                     JOptionPane.showMessageDialog(this.frame, "Inserisci un ID", "Errore", JOptionPane.ERROR_MESSAGE);

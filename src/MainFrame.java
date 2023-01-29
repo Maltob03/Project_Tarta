@@ -10,7 +10,7 @@ public class MainFrame extends JFrame {
     private InsertCartellaClinicaPanel panel4;
     private InsertValutazionePanel panel5;
 
-    public MainFrame() {
+    public MainFrame(boolean getPermission) {
         
         setTitle("Project Tarta");
         setSize(800, 800);
@@ -68,7 +68,7 @@ public class MainFrame extends JFrame {
 
         // Panel 2
         panel2 = new InsertTartarugaPanel();
-        JButton next1 = new JButton("Cartella CLinica");
+        JButton next1 = new JButton("NEXT");
         next1.setBackground(new Color(0, 240, 240));
         next1.setPreferredSize(new Dimension(80, 40));
         next1.setBounds(50, 50, 100, 100);
@@ -89,7 +89,7 @@ public class MainFrame extends JFrame {
 
         //panel 4
         panel4 = new InsertCartellaClinicaPanel();
-        JButton next2 = new JButton("Stato Salute");
+        JButton next2 = new JButton("NEXT");
         next2.setBackground(new Color(0, 240, 240));
         next2.setPreferredSize(new Dimension(80, 40));
         panelForSecondNext.add(next2);
@@ -124,7 +124,13 @@ public class MainFrame extends JFrame {
 
 
         next2.addActionListener(e -> {
+            if(getPermission == true){
             nc.goToInsertStatoSalute(button1, button2, button3, panel1, panel2, panel3, panel4, panel5, this);
+            }
+            else {
+                JOptionPane.showMessageDialog(this, "Non hai i permessi per inserire la scheda di valutazione", "Errore", JOptionPane.ERROR_MESSAGE);
+                    return;
+            }
         });
         
 

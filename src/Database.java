@@ -47,38 +47,10 @@ public class Database {
         salute.setCoda(rs.getInt("coda"));
 
 
-        new ViewResultFrame(turtle,cartella,salute).setVisible(true);
+        new ViewResultFrame(turtle,cartella, salute).setVisible(true);
 
         // risultati è il titolo della finestra
       }
-    } catch (SQLException error) {
-      error.printStackTrace();
-    }
-    return;
-
-  }
-
-  public void inserisciTartaruga(Tartaruga tartaruga) {
-    final String QUERY = "INSERT INTO tartaruga(id_tartaruga,nome,targhetta,id_sede,id_vasca)VALUES(12," + "'"
-        + tartaruga.getNome() + "'" + "," + "'" + tartaruga.getTarghetta() + "'" + "," + tartaruga.getSede() + "," + tartaruga.getVasca() + ");";
-    try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-        Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(QUERY);) {
-    } catch (SQLException error) {
-      error.printStackTrace();
-    }
-    return;
-
-  }
- //ce ne vuole un altra per lo stato di salute
-  public void inserisciCartellaClinica(CartellaClinicaModel cartella) {
-    final String QUERY = "INSERT INTO Cartella_Clinica (id_cartella_clinica,specie,lunghezza,larghezza,peso,luogo_di_ritrovamento,data_di_ritrovamento,id_tartaruga,id_)VALUES(12,"
-        + "'"
-        + cartella.getSpecie() + "'" + "," + "'" + cartella.getLunghezza() + "'" + "," + cartella.getLarghezza() + "," + cartella.getPeso() + "," + cartella.getLuogo() + "," + "," + cartella.getData()
-        + ");";
-    try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
-        Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(QUERY);) {
     } catch (SQLException error) {
       error.printStackTrace();
     }

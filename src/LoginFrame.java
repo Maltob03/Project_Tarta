@@ -49,13 +49,6 @@ public class LoginFrame extends JFrame {
         login.add(username);
 
         
-        //Password
-        JTextField password = new JTextField("segreto");
-        password.setBounds (50,150,300,50);
-        password.setBackground(new Color (190,208,244));
-        password.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,8,0,0));
-        login.add(password);
-        
 
         //Button
         Button login_button = new Button ("Login");
@@ -64,20 +57,9 @@ public class LoginFrame extends JFrame {
         login.add(login_button);
 
 
-        //Button to go into the SearchFrame
-        login_button.addActionListener(new ActionListener() {
-            private Component frame;
-
-			@Override
-            public void actionPerformed(ActionEvent e) {
-              boolean success;
-              success = nc.authenticationPerform(username.getText(), password.getText());
-              if(success == true ){
-                setVisible(false);
-              }
-              // Recupera l'ID e password inserito dall'utente
-            }
-          });
+        login_button.addActionListener(e -> {
+          nc.authenticationPerform(username.getText(), this);
+      });
           
         //frame
         setSize(800,800) ;

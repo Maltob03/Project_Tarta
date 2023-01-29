@@ -8,7 +8,7 @@ public class InsertCartellaClinicaPanel extends JPanel {
 
         setLayout(new BorderLayout());
 
-        Database db = new Database();
+        InsertCartellaClinicaDAO insertDAO = new InsertCartellaClinicaDAO();
         Controller nc = new Controller();
 
         ImageIcon background_image = new ImageIcon("bg.jpg");
@@ -71,7 +71,7 @@ public class InsertCartellaClinicaPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 CartellaClinicaModel cartellaToPass = nc.fillCartellaClinica(textField.getText(),Integer.parseInt(textField_1.getText()),Integer.parseInt(textField_3.getText()),Integer.parseInt(textField_4.getText()),textField_5.getText(),textField_6.getText());
-                db.inserisciCartellaClinica(cartellaToPass);
+                insertDAO.inserisciCartellaClinica(cartellaToPass);
                 return;
             }
         });

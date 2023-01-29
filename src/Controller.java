@@ -5,20 +5,23 @@ import javax.swing.border.MatteBorder;
 
 public class Controller {
 
-    public boolean authenticationPerform(String id, String pass) {
-        boolean loginSuccess = false;
-        if (id.isEmpty() && pass.isEmpty()) {
-            loginSuccess = false;
+    public void authenticationPerform(String id, LoginFrame login) {
+        boolean getPermission = false;
+        LoginDAO cerca = new LoginDAO();
+        boolean dipendenteIsPresent = cerca.cercaDipendente(id);
+
+        if (dipendenteIsPresent == true) {
+            char x = id.charAt(0);
+            if( x == 'M'){
+                getPermission = true;
+                new MainFrame(getPermission).setVisible(true);
+            }
+            else {
+                getPermission = false;
+                new MainFrame(getPermission).setVisible(true);
+            } 
 
         }
-        if (id.equals("matteo") && pass.equals("segreto")) {
-            loginSuccess = true;
-
-        }
-        if (loginSuccess == true) {
-            new MainFrame().setVisible(true);
-        }
-        return loginSuccess;
 
     }
 

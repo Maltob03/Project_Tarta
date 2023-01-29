@@ -36,7 +36,7 @@ public class InsertValutazionePanel extends JPanel {
 
 			public void actionPerformed(ActionEvent e) {
 				
-				 JOptionPane.showMessageDialog(this.frame, "DEBUG", "DEBUG", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(this.frame, "DEBUG", "DEBUG", JOptionPane.ERROR_MESSAGE);
                  return;
 			}
 		});
