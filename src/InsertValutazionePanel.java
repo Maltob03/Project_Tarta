@@ -39,38 +39,38 @@ public class InsertValutazionePanel extends JPanel {
 
 			public void actionPerformed(ActionEvent e) {
 				
-				 JOptionPane.showMessageDialog(this.frame, "dioc", "E fino a qua ci siamo", JOptionPane.ERROR_MESSAGE);
+				 JOptionPane.showMessageDialog(this.frame, "DEBUG", "DEBUG", JOptionPane.ERROR_MESSAGE);
                  return;
 			}
 		});
 
-		insert_tarta_button.setBounds(280, 529, 100, 30);
+		insert_tarta_button.setBounds(280, 523, 100, 30);
 		login.add(insert_tarta_button);
 		
 
 		JLabel lblNewLabel = new JLabel("Testa");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel.setBounds(185, 112, 78, 30);
+		lblNewLabel.setBounds(185, 105, 78, 30);
 		login.add(lblNewLabel);
 
 		JLabel lblNaso = new JLabel("Naso");
 		lblNaso.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNaso.setBounds(185, 184, 57, 30);
+		lblNaso.setBounds(185, 165, 57, 30);
 		login.add(lblNaso);
 
 		JLabel lblBecco = new JLabel("Becco");
 		lblBecco.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblBecco.setBounds(185, 252, 78, 30);
+		lblBecco.setBounds(185, 229, 78, 30);
 		login.add(lblBecco);
 
 		JLabel lblCollo = new JLabel("Collo");
 		lblCollo.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblCollo.setBounds(185, 322, 78, 26);
+		lblCollo.setBounds(185, 294, 78, 26);
 		login.add(lblCollo);
 
 		JLabel lblPinne = new JLabel("Pinne");
 		lblPinne.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblPinne.setBounds(185, 377, 78, 30);
+		lblPinne.setBounds(185, 363, 78, 30);
 		login.add(lblPinne);
 
 		JLabel lblCoda = new JLabel("Coda");
@@ -82,28 +82,28 @@ public class InsertValutazionePanel extends JPanel {
 		ComboNaso.setModel(
 				new DefaultComboBoxModel(new String[] { "", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
 		ComboNaso.setMaximumRowCount(10);
-		ComboNaso.setBounds(407, 188, 69, 30);
+		ComboNaso.setBounds(407, 169, 69, 30);
 		login.add(ComboNaso);
 
 		JComboBox ComboBecco = new JComboBox();
 		ComboBecco.setModel(
 				new DefaultComboBoxModel(new String[] { "", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
 		ComboBecco.setMaximumRowCount(10);
-		ComboBecco.setBounds(407, 256, 69, 30);
+		ComboBecco.setBounds(407, 233, 69, 30);
 		login.add(ComboBecco);
 
 		JComboBox ComboCollo = new JComboBox();
 		ComboCollo.setModel(
 				new DefaultComboBoxModel(new String[] { "", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
 		ComboCollo.setMaximumRowCount(10);
-		ComboCollo.setBounds(407, 324, 69, 30);
+		ComboCollo.setBounds(407, 296, 69, 30);
 		login.add(ComboCollo);
 
 		JComboBox ComboPinne = new JComboBox();
 		ComboPinne.setModel(
 				new DefaultComboBoxModel(new String[] { "", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
 		ComboPinne.setMaximumRowCount(10);
-		ComboPinne.setBounds(407, 381, 69, 30);
+		ComboPinne.setBounds(407, 367, 69, 30);
 		login.add(ComboPinne);
 
 		JComboBox ComboCoda = new JComboBox();
@@ -117,7 +117,7 @@ public class InsertValutazionePanel extends JPanel {
 		ComboTesta.setModel(
 				new DefaultComboBoxModel(new String[] { "", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
 		ComboTesta.setMaximumRowCount(10);
-		ComboTesta.setBounds(407, 116, 69, 30);
+		ComboTesta.setBounds(407, 109, 69, 30);
 		login.add(ComboTesta);
 
 
