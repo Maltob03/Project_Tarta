@@ -50,6 +50,21 @@ public class Controller {
 
     }
 
+     public StatoSaluteModel fillValutazione(int testa, int occhi, int naso, int becco, int collo, int pinne, int coda){
+        StatoSaluteModel compilazione = new StatoSaluteModel();
+
+        compilazione.setTesta(testa);
+        compilazione.setOcchi(occhi);
+        compilazione.setNaso(naso);
+        compilazione.setBecco(becco);
+        compilazione.setCollo(collo);
+        compilazione.setPinne(pinne);
+        compilazione.setCoda(coda);
+
+        return compilazione;
+
+    }
+
     public void cercaTartaruga(String id){
         ViewTartarugaDAO viewTartaDAO = new ViewTartarugaDAO();
         if (id.isEmpty()) {

@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.plaf.FontUIResource;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -9,7 +11,8 @@ public class InsertValutazionePanel extends JPanel {
 		
         setLayout(new BorderLayout());
 
-		//Database db = new Database();
+		Controller nc = new Controller();
+		ValutazioneDAO valDAO = new ValutazioneDAO();
 
 		ImageIcon background_image = new ImageIcon("bg.jpg");
 		JLabel background = new JLabel("", background_image, JLabel.CENTER);
@@ -31,16 +34,7 @@ public class InsertValutazionePanel extends JPanel {
 		login.add(insertTitle);
 
 		Button insert_tarta_button = new Button("Insert");
-		insert_tarta_button.addActionListener(new ActionListener() {
-			private Component frame;
-
-			public void actionPerformed(ActionEvent e) {
-				
-				JOptionPane.showMessageDialog(this.frame, "DEBUG", "DEBUG", JOptionPane.ERROR_MESSAGE);
-                 return;
-			}
-		});
-
+		
 		insert_tarta_button.setBounds(280, 523, 100, 30);
 		login.add(insert_tarta_button);
 		
@@ -54,6 +48,11 @@ public class InsertValutazionePanel extends JPanel {
 		lblNaso.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNaso.setBounds(185, 165, 57, 30);
 		login.add(lblNaso);
+
+		JLabel lbOcchi = new JLabel("Occhi");
+		lbOcchi.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lbOcchi.setBounds(185, 165, 57, 30);
+		login.add(lbOcchi);
 
 		JLabel lblBecco = new JLabel("Becco");
 		lblBecco.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -81,6 +80,7 @@ public class InsertValutazionePanel extends JPanel {
 		ComboNaso.setMaximumRowCount(10);
 		ComboNaso.setBounds(407, 169, 69, 30);
 		login.add(ComboNaso);
+		
 
 		JComboBox ComboBecco = new JComboBox();
 		ComboBecco.setModel(
@@ -117,6 +117,27 @@ public class InsertValutazionePanel extends JPanel {
 		ComboTesta.setBounds(407, 109, 69, 30);
 		login.add(ComboTesta);
 
+		JComboBox ComboOcchi = new JComboBox();
+		ComboOcchi.setModel(
+				new DefaultComboBoxModel(new String[] { "", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+		ComboOcchi.setMaximumRowCount(10);
+		ComboOcchi.setBounds(407, 109, 69, 30);
+		login.add(ComboOcchi);
+
+		insert_tarta_button.addActionListener(e -> {
+            StatoSaluteModel valutazioneToPass = nc.fillValutazione(
+				Integer.parseInt((String) ComboNaso.getSelectedItem()),
+				Integer.parseInt((String) ComboBecco.getSelectedItem()),
+				Integer.parseInt((String) ComboCollo.getSelectedItem()),
+				Integer.parseInt((String) ComboPinne.getSelectedItem()),
+				Integer.parseInt((String) ComboCoda.getSelectedItem()),
+				Integer.parseInt((String) ComboTesta.getSelectedItem()),
+				Integer.parseInt((String) ComboOcchi.getSelectedItem())
+				);
+
+				valDAO.InserisciValutazione(valutazioneToPass);
+            
+        });
 
 	}
 }
