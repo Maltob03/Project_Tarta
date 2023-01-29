@@ -10,7 +10,7 @@ public class SearchPanel extends JPanel {
 
         setLayout(new BorderLayout());
         Font f = new Font ("TYPE1_FONT", Font.BOLD, 30);
-        Database db = new Database();
+        ViewTartarugaDAO viewTartaDAO = new ViewTartarugaDAO();
 
         ImageIcon background_image = new ImageIcon("bg.jpg");
         JLabel background = new JLabel("", background_image, JLabel.CENTER);
@@ -54,7 +54,7 @@ public class SearchPanel extends JPanel {
               //QUERY THAT PASS THE QUERY TO THE DB METHOD
               
               
-              db.cercaTartaruga(id);
+              viewTartaDAO.cercaTartaruga(id);
               
       
               

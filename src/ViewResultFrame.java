@@ -22,6 +22,8 @@ public class ViewResultFrame extends JFrame {
       panel1 = new SearchResultPanel(tartaruga.getNome(),tartaruga.getTarghetta(),tartaruga.getSede(),tartaruga.getSede());
       panel1.add(panelForNextResult, BorderLayout.SOUTH);
       JButton NextResult = new JButton("NEXT 1");
+      NextResult.setBackground(new Color(0, 240, 240));
+      NextResult.setPreferredSize(new Dimension(80, 40));
       NextResult.setBounds(50, 50, 100, 100);
       panelForNextResult.add(NextResult);
 

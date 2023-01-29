@@ -37,7 +37,6 @@ public class SearchResultPanel extends JPanel {
         nomeLabel.setBounds(70, 150, 327, 154);
         login.add(nomeLabel);
 
-        /* */
         JLabel targhettaLabel = new JLabel("Targhetta : " + targhetta);
         targhettaLabel.setFont(new Font("Dialog", Font.BOLD, 24));
         targhettaLabel.setBounds(70, 200, 327, 154);
