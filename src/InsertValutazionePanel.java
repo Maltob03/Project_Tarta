@@ -3,10 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class InsertValutazionePanel extends JPanel {
-	String nome;
-	String targhetta;
-	static int sede;
-	static int vasca;
+	
 
 	public InsertValutazionePanel() {
 		

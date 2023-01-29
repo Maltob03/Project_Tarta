@@ -47,7 +47,7 @@ public class Database {
         salute.setCoda(rs.getInt("coda"));
 
 
-        new ViewResultFrame(turtle.getNome(), turtle.getTarghetta(), turtle.getSede(), turtle.getVasca(), cartella.getSpecie(), cartella.getLunghezza(),cartella.getLarghezza(),cartella.getPeso(),cartella.getLuogo(),salute.getTesta(),salute.getOcchi(),salute.getNaso(),salute.getBecco(),salute.getCollo(),salute.getPinne(),salute.getCoda()).setVisible(true);
+        new ViewResultFrame(turtle,cartella,salute).setVisible(true);
 
         // risultati è il titolo della finestra
       }

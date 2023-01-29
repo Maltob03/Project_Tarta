@@ -5,9 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class LoginFrame extends JFrame {
-  static String id;
-  static String pw;
-  boolean isPresented = false;
+  
     public LoginFrame(){
 
       Controller nc = new Controller();
