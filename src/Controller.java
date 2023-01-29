@@ -11,6 +11,11 @@ public class Controller {
     public void authenticationPerform(String id, LoginFrame login) {
         boolean getPermission = false;
         LoginDAO cerca = new LoginDAO();
+        if (id.isEmpty()) {
+            JOptionPane.showMessageDialog(this.frame, "Inserisci un ID", "Errore", JOptionPane.ERROR_MESSAGE);
+            return;
+          }
+
         boolean dipendenteIsPresent = cerca.cercaDipendente(id);
 
         if (dipendenteIsPresent == true) {
@@ -26,6 +31,10 @@ public class Controller {
                 new MainFrame(getPermission).setVisible(true);
             } 
 
+        }
+        else {
+            JOptionPane.showMessageDialog(this.frame, "Dipendente non presente", "Errore", JOptionPane.ERROR_MESSAGE);
+            return;
         }
 
     }

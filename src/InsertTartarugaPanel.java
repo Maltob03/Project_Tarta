@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 
 public class InsertTartarugaPanel extends JPanel {
     
@@ -56,27 +55,9 @@ public class InsertTartarugaPanel extends JPanel {
         insert_tarta_button.setBounds(300, 400, 100, 30);
         login.add(insert_tarta_button); 
 
-                    
-                    
-                
-
-
-        //quando clicco sulla funzione fa i get text dagli id e li manda all'entità tartaruga
-       insert_tarta_button.addActionListener(new ActionListener() {
-        private Component frame;
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                Tartaruga tartarugaToPass = nc.fillTartaruga(textField.getText(), textField_1.getText(),Integer.parseInt(textField_3.getText()),Integer.parseInt(textField_4.getText()));
+        insert_tarta_button.addActionListener(e -> {
+            Tartaruga tartarugaToPass = nc.fillTartaruga(textField.getText(), textField_1.getText(),Integer.parseInt(textField_3.getText()),Integer.parseInt(textField_4.getText()));
                 tDAO.inserisciTartaruga(tartarugaToPass); 
-                /* 
-                if (textField.getText().isEmpty()) {
-                    JOptionPane.showMessageDialog(this.frame, "Inserisci un ID", "Errore", JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
-                */
-                
-            }
         });
 
 
