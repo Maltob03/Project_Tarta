@@ -124,13 +124,7 @@ public class MainFrame extends JFrame {
 
 
         next2.addActionListener(e -> {
-            if(getPermission == true){
-            nc.goToInsertStatoSalute(button1, button2, button3, panel1, panel2, panel3, panel4, panel5, this);
-            }
-            else {
-                JOptionPane.showMessageDialog(this, "Non hai i permessi per inserire la scheda di valutazione", "Errore", JOptionPane.ERROR_MESSAGE);
-                    return;
-            }
+            nc.goToInsertStatoSalute(getPermission,button1, button2, button3, panel1, panel2, panel3, panel4, panel5, this);
         });
         
 

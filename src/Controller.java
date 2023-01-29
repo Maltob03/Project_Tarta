@@ -130,9 +130,10 @@ public class Controller {
 
     }
 
-    public void goToInsertStatoSalute(JButton button1, JButton button2, JButton button3, SearchPanel panel1,
+    public void goToInsertStatoSalute(boolean getPermission, JButton button1, JButton button2, JButton button3, SearchPanel panel1,
             InsertTartarugaPanel panel2, SearchResultPanel panel3, InsertCartellaClinicaPanel panel4,
             InsertValutazionePanel panel5, MainFrame mainFrame) {
+        if(getPermission == true){
         button2.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
         button1.setBorder(null);
         button3.setBorder(null);
@@ -142,6 +143,10 @@ public class Controller {
         mainFrame.add(panel5, BorderLayout.CENTER);
         mainFrame.revalidate();
         mainFrame.repaint();
+        }
+        else {
+            JOptionPane.showMessageDialog(this.frame, "Non hai i permessi per inserire la scheda di valutazione", "Errore", JOptionPane.ERROR_MESSAGE);
+        }
 
     }
 
