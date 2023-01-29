@@ -5,6 +5,9 @@ import javax.swing.border.MatteBorder;
 
 public class Controller {
 
+    private Component frame;
+
+
     public void authenticationPerform(String id, LoginFrame login) {
         boolean getPermission = false;
         LoginDAO cerca = new LoginDAO();
@@ -14,10 +17,12 @@ public class Controller {
             char x = id.charAt(0);
             if( x == 'M'){
                 getPermission = true;
+                login.setVisible(false);
                 new MainFrame(getPermission).setVisible(true);
             }
             else {
                 getPermission = false;
+                login.setVisible(false);
                 new MainFrame(getPermission).setVisible(true);
             } 
 
@@ -34,6 +39,17 @@ public class Controller {
 
         return tartarugaController;
 
+    }
+
+    public void cercaTartaruga(String id){
+        ViewTartarugaDAO viewTartaDAO = new ViewTartarugaDAO();
+        if (id.isEmpty()) {
+            JOptionPane.showMessageDialog(this.frame, "Inserisci un ID", "Errore", JOptionPane.ERROR_MESSAGE);
+            return;
+          }
+        else {
+            viewTartaDAO.cercaTartaruga(id);
+        }
     }
 
     public CartellaClinicaModel fillCartellaClinica(String specie, int lunghezza, int larghezza, int peso, String luogo,
