@@ -1,9 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class InsertTartarugaPanel extends JPanel {
+public class ReinserimentoPanel extends JPanel {
+    boolean reinsert = true;
 
-    public InsertTartarugaPanel() {
+    public ReinserimentoPanel() {
 
         setLayout(new BorderLayout());
 
@@ -61,8 +62,7 @@ public class InsertTartarugaPanel extends JPanel {
         });
 
 
-        boolean reinsert = false;
-        nc.clearTextFieldReinsert(textField,reinsert);
+        nc.clearTextField(textField);
         nc.clearTextField(textField_1);
         nc.clearTextField(textField_3);
         nc.clearTextField(textField_4);

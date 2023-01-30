@@ -1,7 +1,5 @@
 import java.sql.*;
 
-import javax.xml.crypto.Data;
-
 public class ViewTartarugaDAO {
 
     public void cercaTartaruga(String id) {

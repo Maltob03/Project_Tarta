@@ -4,7 +4,7 @@ import java.awt.event.*;
 
 public class InsertCartellaClinicaPanel extends JPanel {
 
-    public InsertCartellaClinicaPanel() {
+    public InsertCartellaClinicaPanel(boolean reinsert) {
 
         setLayout(new BorderLayout());
 
@@ -77,8 +77,8 @@ public class InsertCartellaClinicaPanel extends JPanel {
         });
 
 
-        nc.clearTextField(textField);
-        nc.clearTextField(textField_1);
+        nc.clearTextFieldReinsert(textField, reinsert);
+        nc.clearTextFieldReinsert(textField_1, reinsert);
         nc.clearTextField(textField_3);
         nc.clearTextField(textField_4);
         nc.clearTextField(textField_5);

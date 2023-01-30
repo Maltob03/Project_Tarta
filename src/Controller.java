@@ -91,48 +91,76 @@ public class Controller {
     }
 
 
-    public void goToSearch(JButton button1, JButton button2, JButton button3, SearchPanel panel1,
+    public void goToSearch(JButton button1, JButton button2, JButton button3, JButton button5, SearchPanel panel1,
             InsertTartarugaPanel panel2, SearchResultPanel panel3, InsertCartellaClinicaPanel panel4,
-            InsertValutazionePanel panel5, MainFrame mainFrame) {
+            InsertValutazionePanel panel5, InsertTartarugaPanel panel6, InsertCartellaClinicaPanel panel7, MainFrame mainFrame) {
         button1.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
         button2.setBorder(null);
         button3.setBorder(null);
+        button5.setBorder(null);
         mainFrame.remove(panel2);
         mainFrame.remove(panel3);
         mainFrame.remove(panel4);
         mainFrame.remove(panel5);
+        mainFrame.remove(panel6);
+        mainFrame.remove(panel7);
         mainFrame.add(panel1, BorderLayout.CENTER);
         mainFrame.revalidate();
         mainFrame.repaint();
 
     }
 
-    public void goToInsert(JButton button1, JButton button2, JButton button3, SearchPanel panel1,
+    public void goToInsert(JButton button1, JButton button2, JButton button3, JButton button5, SearchPanel panel1,
             InsertTartarugaPanel panel2, SearchResultPanel panel3, InsertCartellaClinicaPanel panel4,
-            InsertValutazionePanel panel5, MainFrame mainFrame) {
+            InsertValutazionePanel panel5, InsertTartarugaPanel panel6, InsertCartellaClinicaPanel panel7, MainFrame mainFrame) {
         button2.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
         button1.setBorder(null);
         button3.setBorder(null);
+        button5.setBorder(null);
         mainFrame.remove(panel1);
         mainFrame.remove(panel3);
         mainFrame.remove(panel4);
         mainFrame.remove(panel5);
+        mainFrame.remove(panel6);
+        mainFrame.remove(panel7);
         mainFrame.add(panel2, BorderLayout.CENTER);
         mainFrame.revalidate();
         mainFrame.repaint();
 
     }
 
-    public void goToStatistics(JButton button1, JButton button2, JButton button3, SearchPanel panel1,
+    public void goToReinsert(JButton button1, JButton button2, JButton button3, JButton button5, SearchPanel panel1,
             InsertTartarugaPanel panel2, SearchResultPanel panel3, InsertCartellaClinicaPanel panel4,
-            InsertValutazionePanel panel5, MainFrame mainFrame) {
+            InsertValutazionePanel panel5, InsertTartarugaPanel panel6, InsertCartellaClinicaPanel panel7, MainFrame mainFrame) {
+        button5.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
+        button1.setBorder(null);
+        button3.setBorder(null);
+        button2.setBorder(null);
+        mainFrame.remove(panel1);
+        mainFrame.remove(panel3);
+        mainFrame.remove(panel4);
+        mainFrame.remove(panel5);
+        mainFrame.remove(panel6);
+        mainFrame.remove(panel7);
+        mainFrame.add(panel6, BorderLayout.CENTER);
+        mainFrame.revalidate();
+        mainFrame.repaint();
+
+    }
+
+    public void goToStatistics(JButton button1, JButton button2, JButton button3, JButton button5, SearchPanel panel1,
+            InsertTartarugaPanel panel2, SearchResultPanel panel3, InsertCartellaClinicaPanel panel4,
+            InsertValutazionePanel panel5, InsertTartarugaPanel panel6, InsertCartellaClinicaPanel panel7, MainFrame mainFrame) {
         button3.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
         button1.setBorder(null);
         button2.setBorder(null);
+        button5.setBorder(null);
         mainFrame.remove(panel1);
         mainFrame.remove(panel2);
         mainFrame.remove(panel4);
         mainFrame.remove(panel5);
+        mainFrame.remove(panel6);
+        mainFrame.remove(panel7);
         mainFrame.add(panel3, BorderLayout.CENTER);
         mainFrame.revalidate();
         mainFrame.repaint();
@@ -140,15 +168,33 @@ public class Controller {
     }
 
 
-    public void goToInsertCartellaClinica(JButton button1, JButton button2, JButton button3, SearchPanel panel1,
+    public void goToInsertCartellaClinica(JButton button1, JButton button2, JButton button3, JButton button5, SearchPanel panel1,
             InsertTartarugaPanel panel2, SearchResultPanel panel3, InsertCartellaClinicaPanel panel4,
-            InsertValutazionePanel panel5, MainFrame mainFrame) {
+            InsertValutazionePanel panel5, InsertTartarugaPanel panel6, InsertCartellaClinicaPanel panel7, MainFrame mainFrame) {
         button2.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
         button1.setBorder(null);
         button3.setBorder(null);
         mainFrame.remove(panel2);
         mainFrame.remove(panel3);
+        mainFrame.remove(panel6);
+        mainFrame.remove(panel7);
         mainFrame.add(panel4, BorderLayout.CENTER);
+        mainFrame.revalidate();
+        mainFrame.repaint();
+
+    }
+
+    public void goToReinsertCartellaClinica(JButton button1, JButton button2, JButton button3, JButton button5, SearchPanel panel1,
+            InsertTartarugaPanel panel2, SearchResultPanel panel3, InsertCartellaClinicaPanel panel4,
+            InsertValutazionePanel panel5, InsertTartarugaPanel panel6, InsertCartellaClinicaPanel panel7, MainFrame mainFrame) {
+        button5.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
+        button1.setBorder(null);
+        button3.setBorder(null);
+        mainFrame.remove(panel2);
+        mainFrame.remove(panel3);
+        mainFrame.remove(panel4);
+        mainFrame.remove(panel6);
+        mainFrame.add(panel7, BorderLayout.CENTER);
         mainFrame.revalidate();
         mainFrame.repaint();
 
@@ -156,7 +202,7 @@ public class Controller {
 
     public void goToInsertStatoSalute(boolean getPermission, JButton button1, JButton button2, JButton button3, SearchPanel panel1,
             InsertTartarugaPanel panel2, SearchResultPanel panel3, InsertCartellaClinicaPanel panel4,
-            InsertValutazionePanel panel5, MainFrame mainFrame) {
+            InsertValutazionePanel panel5, InsertTartarugaPanel panel6, InsertCartellaClinicaPanel panel7, MainFrame mainFrame) {
         if(getPermission == true){
         button2.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
         button1.setBorder(null);
@@ -164,6 +210,8 @@ public class Controller {
         mainFrame.remove(panel2);
         mainFrame.remove(panel3);
         mainFrame.remove(panel4);
+        mainFrame.remove(panel6);
+        mainFrame.remove(panel7);
         mainFrame.add(panel5, BorderLayout.CENTER);
         mainFrame.revalidate();
         mainFrame.repaint();
@@ -204,6 +252,37 @@ public class Controller {
             }
         });
     }
+
+
+    public void clearTextFieldReinsert(JTextField textField, boolean reinsert) {
+        if (reinsert == true){
+            System.out.println(reinsert);
+
+            textField.addFocusListener(new FocusListener() {
+                public void focusGained(FocusEvent e) {
+                    textField.setText("NON SCRIVERE");
+                }
+        
+                public void focusLost(FocusEvent e) {
+                    textField.setText("NON SCRIVERE");
+                }
+            });
+        }
+            else {
+                textField.addFocusListener(new FocusListener() {
+                    public void focusGained(FocusEvent e) {
+                        textField.setText("");
+                    }
+            
+                    public void focusLost(FocusEvent e) {
+                    }
+                    
+                });
+                System.out.println("STO in ELSE");
+            }
+
+        }
+        
 
 
 
