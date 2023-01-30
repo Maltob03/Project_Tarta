@@ -23,7 +23,8 @@ public class LoginFrame extends JFrame {
         heading.add(name);
         
         //Login Panel
-        JPanel login = new JPanel (); login.setLayout (null);
+        JPanel login = new JPanel ();
+        login.setLayout (null);
         login.setSize (400,350);
         login.setBackground (new Color (0,0,0, 0));
         login.setBounds (200,350, 400,350);

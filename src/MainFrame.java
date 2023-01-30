@@ -22,7 +22,7 @@ public class MainFrame extends JFrame {
         setLayout(new BorderLayout());
         setResizable(false);
         Controller nc = new Controller();
-        // Toolbar
+
         // Panel for button
         JPanel panelForButton = new JPanel(new FlowLayout(FlowLayout.LEFT));
 
