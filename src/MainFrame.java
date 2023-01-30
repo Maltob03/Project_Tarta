@@ -9,8 +9,10 @@ public class MainFrame extends JFrame {
     private SearchResultPanel panel3;
     private InsertCartellaClinicaPanel panel4;
     private InsertValutazionePanel panel5;
-    private InsertTartarugaPanel panel6;
-    private InsertCartellaClinicaPanel panel7;
+    private ReinserimentoPanel1 panel6;
+    private InsertTartarugaPanel panel7;
+    private InsertCartellaClinicaPanel panel8;
+    private InsertValutazionePanel panel9;
 
     public MainFrame(boolean getPermission) {
         
@@ -47,14 +49,6 @@ public class MainFrame extends JFrame {
         button3.setBorder(null);
         panelForButton.add(button3);
 
-
-
-        JButton button4 = new JButton("Suspends");
-        button4.setBackground(new Color(240, 240, 240));
-        button4.setPreferredSize(new Dimension(60, 30));
-        button4.setBorder(null);
-        panelForButton.add(button4);
-
         JButton button5 = new JButton("Reinsert");
         button5.setBackground(new Color(240, 240, 240));
         button5.setPreferredSize(new Dimension(60, 30));
@@ -70,14 +64,15 @@ public class MainFrame extends JFrame {
         JPanel panelForSecondNext = new JPanel();
         JPanel panelForReinsert1 = new JPanel();
         JPanel panelForReinsert2 = new JPanel();
+        JPanel panelForReinsert3 = new JPanel();
         // Panel 1
         panel1 = new SearchPanel();
 
         
         
-
+        boolean prova1 = false;
         // Panel 2
-        panel2 = new InsertTartarugaPanel();
+        panel2 = new InsertTartarugaPanel(prova1);
         JButton next1 = new JButton("NEXT");
         next1.setBackground(new Color(0, 240, 240));
         next1.setPreferredSize(new Dimension(80, 40));
@@ -110,7 +105,7 @@ public class MainFrame extends JFrame {
         panel5 = new InsertValutazionePanel();
 
         //panel6
-        panel6 = new InsertTartarugaPanel();
+        panel6 = new ReinserimentoPanel1(this);
         JButton next3 = new JButton("NEXT");
         next3.setBackground(new Color(0, 240, 240));
         next3.setPreferredSize(new Dimension(80, 40));
@@ -119,14 +114,28 @@ public class MainFrame extends JFrame {
         panel6.add(panelForReinsert1, BorderLayout.SOUTH);
 
         boolean prova2 = true;
+        
 
-        panel7 = new InsertCartellaClinicaPanel(prova2);
+        //Panel 7
+        panel7 = new InsertTartarugaPanel(prova2);
         JButton next4 = new JButton("NEXT");
         next4.setBackground(new Color(0, 240, 240));
         next4.setPreferredSize(new Dimension(80, 40));
         next4.setBounds(50, 50, 100, 100);
         panelForReinsert2.add(next4);
         panel7.add(panelForReinsert2, BorderLayout.SOUTH);
+
+
+
+        //Panel 8
+        panel8 = new InsertCartellaClinicaPanel(prova2);
+        JButton next5 = new JButton("NEXT");
+        next5.setBackground(new Color(0, 240, 240));
+        next5.setPreferredSize(new Dimension(80, 40));
+        next5.setBounds(50, 50, 100, 100);
+        panelForReinsert3.add(next5);
+        panel8.add(panelForReinsert3, BorderLayout.SOUTH);
+
 
         
 
@@ -159,19 +168,34 @@ public class MainFrame extends JFrame {
 
 
         next2.addActionListener(e -> {
-            nc.goToInsertStatoSalute(getPermission,button1, button2, button3, panel1, panel2, panel3, panel4, panel5, panel6,panel7, this);
+            nc.goToInsertStatoSalute(getPermission,button1, button2, button3, panel1, panel2, panel3, panel4, panel5, panel6,panel7,panel8,this);
         });
 
 
         next3.addActionListener(e -> {
-            nc.goToReinsertCartellaClinica(button1, button2, button3, button5, panel1, panel2, panel3, panel4, panel5, panel6, panel7, this);
-            System.out.println("NUOVO 3");
+            boolean reinsert = nc.cercaTarghetta(ReinserimentoPanel1.research.getText());
+            if(reinsert == true) {
+                nc.goToReinsertTarta(button1, button2, button3, button5, panel1, panel2, panel3, panel4, panel5, panel6, panel7, this);     
+            }
+           
+            System.out.println(reinsert);
         });
 
         next4.addActionListener(e -> {
-            nc.goToInsertStatoSalute(getPermission, button1, button2, button3, panel1, panel2, panel3, panel4, panel5, panel6, panel7, this);
+            nc.goToReinsertCartellaClinica(button1, button2, button3, panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, this);
             System.out.println("NUOVO 4");
         });
+
+        next5.addActionListener(e -> {
+            nc.goToInsertStatoSalute(getPermission, button1, button2, button3, panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, this);
+            System.out.println("NUOVO 5");
+        });
+
+
+        
+
+
+        
 
         
 

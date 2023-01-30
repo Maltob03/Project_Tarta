@@ -3,12 +3,13 @@ import java.awt.*;
 
 public class InsertTartarugaPanel extends JPanel {
 
-    public InsertTartarugaPanel() {
+    public InsertTartarugaPanel(boolean reinsert) {
 
         setLayout(new BorderLayout());
 
 
         InsertTartarugaDAO tDAO = new InsertTartarugaDAO();
+        ReinsertTartarugaDAO rDAO = new ReinsertTartarugaDAO();
         Controller nc = new Controller();
 
         ImageIcon background_image = new ImageIcon("bg.jpg");
@@ -56,12 +57,15 @@ public class InsertTartarugaPanel extends JPanel {
 
         insert_tarta_button.addActionListener(e -> {
             Tartaruga tartarugaToPass = nc.fillTartaruga(textField.getText(), textField_1.getText(),Integer.parseInt(textField_3.getText()),Integer.parseInt(textField_4.getText()));
-            System.out.println(tartarugaToPass.getNome());
-            tDAO.inserisciTartaruga(tartarugaToPass); 
+            if(reinsert == false){
+                tDAO.inserisciTartaruga(tartarugaToPass); 
+            }
+            else {
+                rDAO.inserisciTartaruga(tartarugaToPass);
+            }
         });
 
 
-        boolean reinsert = false;
         nc.clearTextFieldReinsert(textField,reinsert);
         nc.clearTextField(textField_1);
         nc.clearTextField(textField_3);

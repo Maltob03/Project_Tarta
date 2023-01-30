@@ -4,11 +4,13 @@ import java.awt.event.*;
 
 public class InsertCartellaClinicaPanel extends JPanel {
 
+    static JTextField textField;
     public InsertCartellaClinicaPanel(boolean reinsert) {
 
         setLayout(new BorderLayout());
 
         InsertCartellaClinicaDAO insertDAO = new InsertCartellaClinicaDAO();
+        ReinsertCartellaClinicaDAO reinsertDAO = new ReinsertCartellaClinicaDAO();
         Controller nc = new Controller();
 
         ImageIcon background_image = new ImageIcon("bg.jpg");
@@ -71,14 +73,19 @@ public class InsertCartellaClinicaPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 CartellaClinicaModel cartellaToPass = nc.fillCartellaClinica(textField.getText(),Integer.parseInt(textField_1.getText()),Integer.parseInt(textField_3.getText()),Integer.parseInt(textField_4.getText()),textField_5.getText(),textField_6.getText());
-                insertDAO.inserisciCartellaClinica(cartellaToPass);
+                if(reinsert == false){
+                    insertDAO.inserisciCartellaClinica(cartellaToPass);
+                }
+                else{
+                    reinsertDAO.reinserisciCartellaClinica(cartellaToPass);
+                }
                 return;
             }
         });
 
 
         nc.clearTextFieldReinsert(textField, reinsert);
-        nc.clearTextFieldReinsert(textField_1, reinsert);
+        nc.clearTextField(textField_3);
         nc.clearTextField(textField_3);
         nc.clearTextField(textField_4);
         nc.clearTextField(textField_5);
