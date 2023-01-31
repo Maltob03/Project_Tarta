@@ -160,9 +160,11 @@ public class Controller {
     }
 
     public void goToStatistics(JButton button1, JButton button2, JButton button3, JButton button5, SearchPanel panel1,
-            InsertTartarugaPanel panel2, SearchResultPanel panel3, InsertCartellaClinicaPanel panel4,
+            InsertTartarugaPanel panel2, StatisticsPanel panel3, InsertCartellaClinicaPanel panel4,
             InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7,
             MainFrame mainFrame) {
+
+    	
         button3.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
         button1.setBorder(null);
         button2.setBorder(null);

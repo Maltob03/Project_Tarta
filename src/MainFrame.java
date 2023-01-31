@@ -13,9 +13,15 @@ public class MainFrame extends JFrame {
     private InsertTartarugaPanel panel7;
     private InsertCartellaClinicaPanel panel8;
     private InsertValutazionePanel panel9;
+    private StatisticsPanel panelStat;
 
     public MainFrame(boolean getPermission) {
         
+    	panelStat = new StatisticsPanel();
+    	
+    	
+    	
+    	
         setTitle("Project Tarta");
         setSize(800, 800);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -149,7 +155,7 @@ public class MainFrame extends JFrame {
             nc.goToInsert(button1, button2, button3, button5, panel1, panel2, panel3, panel4, panel5, panel6, panel7, this);
         });
         button3.addActionListener(e -> {
-            nc.goToStatistics(button1, button2, button3, button5, panel1, panel2, panel3, panel4, panel5, panel6,panel7, this);
+            nc.goToStatistics(button1, button2, button3, button5, panel1, panel2, panelStat, panel4, panel5, panel6,panel7, this);
 
             
         });
