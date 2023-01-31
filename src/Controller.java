@@ -99,7 +99,7 @@ public class Controller {
     }
 
     public void goToSearch(JButton button1, JButton button2, JButton button3, JButton button5, SearchPanel panel1,
-            InsertTartarugaPanel panel2, SearchResultPanel panel3, InsertCartellaClinicaPanel panel4,
+            InsertTartarugaPanel panel2, StatisticPanel panel3, InsertCartellaClinicaPanel panel4,
             InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7,
             MainFrame mainFrame) {
         button1.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
@@ -119,7 +119,7 @@ public class Controller {
     }
 
     public void goToInsert(JButton button1, JButton button2, JButton button3, JButton button5, SearchPanel panel1,
-            InsertTartarugaPanel panel2, SearchResultPanel panel3, InsertCartellaClinicaPanel panel4,
+            InsertTartarugaPanel panel2, StatisticPanel panel3, InsertCartellaClinicaPanel panel4,
             InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7,
             MainFrame mainFrame) {
         button2.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
@@ -139,7 +139,7 @@ public class Controller {
     }
 
     public void goToReinsert(JButton button1, JButton button2, JButton button3, JButton button5, SearchPanel panel1,
-            InsertTartarugaPanel panel2, SearchResultPanel panel3, InsertCartellaClinicaPanel panel4,
+            InsertTartarugaPanel panel2, StatisticPanel panel3, InsertCartellaClinicaPanel panel4,
             InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7,
             MainFrame mainFrame) {
         button5.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
@@ -160,7 +160,7 @@ public class Controller {
     }
 
     public void goToStatistics(JButton button1, JButton button2, JButton button3, JButton button5, SearchPanel panel1,
-            InsertTartarugaPanel panel2, SearchResultPanel panel3, InsertCartellaClinicaPanel panel4,
+            InsertTartarugaPanel panel2, StatisticPanel panel3, InsertCartellaClinicaPanel panel4,
             InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7,
             MainFrame mainFrame) {
         button3.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
@@ -181,7 +181,7 @@ public class Controller {
 
     public void goToInsertCartellaClinica(boolean check,JButton button1, JButton button2, JButton button3, JButton button5,
             SearchPanel panel1,
-            InsertTartarugaPanel panel2, SearchResultPanel panel3, InsertCartellaClinicaPanel panel4,
+            InsertTartarugaPanel panel2, StatisticPanel panel3, InsertCartellaClinicaPanel panel4,
             InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7,
             MainFrame mainFrame) {
                 if(check == true){
@@ -205,7 +205,7 @@ public class Controller {
 
     public void goToReinsertTarta(JButton button1, JButton button2, JButton button3, JButton button5,
             SearchPanel panel1,
-            InsertTartarugaPanel panel2, SearchResultPanel panel3, InsertCartellaClinicaPanel panel4,
+            InsertTartarugaPanel panel2, StatisticPanel panel3, InsertCartellaClinicaPanel panel4,
             InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7,
             MainFrame mainFrame) {
         button5.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
@@ -223,7 +223,7 @@ public class Controller {
 
     public void goToReinsertCartellaClinica(JButton button2, JButton button3, JButton button5,
             SearchPanel panel1,
-            InsertTartarugaPanel panel2, SearchResultPanel panel3, InsertCartellaClinicaPanel panel4,
+            InsertTartarugaPanel panel2, StatisticPanel panel3, InsertCartellaClinicaPanel panel4,
             InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7, InsertCartellaClinicaPanel panel8,
             MainFrame mainFrame) {
         button5.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
@@ -240,7 +240,7 @@ public class Controller {
 
     public void goToInsertStatoSalute(boolean checked,boolean getPermission, JButton button1, JButton button2, JButton button3,
             SearchPanel panel1,
-            InsertTartarugaPanel panel2, SearchResultPanel panel3, InsertCartellaClinicaPanel panel4,
+            InsertTartarugaPanel panel2, StatisticPanel panel3, InsertCartellaClinicaPanel panel4,
             InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7,
             InsertCartellaClinicaPanel panel8,
             MainFrame mainFrame) {

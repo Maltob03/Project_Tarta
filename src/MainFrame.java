@@ -6,13 +6,12 @@ public class MainFrame extends JFrame {
 
     private SearchPanel panel1;
     private InsertTartarugaPanel panel2;
-    private SearchResultPanel panel3;
+    private StatisticPanel panel3;
     private InsertCartellaClinicaPanel panel4;
     private InsertValutazionePanel panel5;
     private ReinserimentoPanel1 panel6;
     private InsertTartarugaPanel panel7;
     private InsertCartellaClinicaPanel panel8;
-    private InsertValutazionePanel panel9;
 
     public MainFrame(boolean getPermission) {
         
@@ -89,7 +88,7 @@ public class MainFrame extends JFrame {
         
 
         // Panel 3
-        panel3 = new SearchResultPanel("pippo","topolino",2,2);
+        panel3 = new StatisticPanel();
 
         boolean prova = false;
         //panel 4
