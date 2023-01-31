@@ -293,11 +293,13 @@ public class Controller {
 
             textField.addFocusListener(new FocusListener() {
                 public void focusGained(FocusEvent e) {
-                    textField.setText("NON SCRIVERE");
+                	textField.setText("Prova ad editarmi se hai il coraggio");
+                    textField.setEditable(false);
                 }
 
                 public void focusLost(FocusEvent e) {
-                    textField.setText("NON SCRIVERE");
+                	textField.setText("Bravo, scappa");
+                    textField.setEditable(false);
                 }
             });
         } else {
