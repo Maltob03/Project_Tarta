@@ -100,7 +100,7 @@ public class Controller {
 
     public void goToSearch(JButton button1, JButton button2, JButton button3, JButton button5, SearchPanel panel1,
             InsertTartarugaPanel panel2, StatisticPanel panel3, InsertCartellaClinicaPanel panel4,
-            InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7,
+            InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7,InsertCartellaClinicaPanel panel8,
             MainFrame mainFrame) {
         button1.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
         button2.setBorder(null);
@@ -112,6 +112,7 @@ public class Controller {
         mainFrame.remove(panel5);
         mainFrame.remove(panel6);
         mainFrame.remove(panel7);
+        mainFrame.remove(panel8);
         mainFrame.add(panel1, BorderLayout.CENTER);
         mainFrame.revalidate();
         mainFrame.repaint();
@@ -120,7 +121,7 @@ public class Controller {
 
     public void goToInsert(JButton button1, JButton button2, JButton button3, JButton button5, SearchPanel panel1,
             InsertTartarugaPanel panel2, StatisticPanel panel3, InsertCartellaClinicaPanel panel4,
-            InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7,
+            InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7,InsertCartellaClinicaPanel panel8,
             MainFrame mainFrame) {
         button2.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
         button1.setBorder(null);
@@ -132,6 +133,7 @@ public class Controller {
         mainFrame.remove(panel5);
         mainFrame.remove(panel6);
         mainFrame.remove(panel7);
+        mainFrame.remove(panel8);
         mainFrame.add(panel2, BorderLayout.CENTER);
         mainFrame.revalidate();
         mainFrame.repaint();
@@ -140,7 +142,7 @@ public class Controller {
 
     public void goToReinsert(JButton button1, JButton button2, JButton button3, JButton button5, SearchPanel panel1,
             InsertTartarugaPanel panel2, StatisticPanel panel3, InsertCartellaClinicaPanel panel4,
-            InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7,
+            InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7,InsertCartellaClinicaPanel panel8,
             MainFrame mainFrame) {
         button5.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
         button1.setBorder(null);
@@ -153,6 +155,7 @@ public class Controller {
         mainFrame.remove(panel5);
         mainFrame.remove(panel6);
         mainFrame.remove(panel7);
+        mainFrame.remove(panel8);
         mainFrame.add(panel6, BorderLayout.CENTER);
         mainFrame.revalidate();
         mainFrame.repaint();
@@ -161,18 +164,19 @@ public class Controller {
 
     public void goToStatistics(JButton button1, JButton button2, JButton button3, JButton button5, SearchPanel panel1,
             InsertTartarugaPanel panel2, StatisticPanel panel3, InsertCartellaClinicaPanel panel4,
-            InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7,
+            InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7,InsertCartellaClinicaPanel panel8,
             MainFrame mainFrame) {
         button3.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
         button1.setBorder(null);
         button2.setBorder(null);
         button5.setBorder(null);
-        mainFrame.remove(panel1);
         mainFrame.remove(panel2);
+        mainFrame.remove(panel3);
         mainFrame.remove(panel4);
         mainFrame.remove(panel5);
         mainFrame.remove(panel6);
         mainFrame.remove(panel7);
+        mainFrame.remove(panel8);
         mainFrame.add(panel3, BorderLayout.CENTER);
         mainFrame.revalidate();
         mainFrame.repaint();
@@ -182,7 +186,7 @@ public class Controller {
     public void goToInsertCartellaClinica(boolean check,JButton button1, JButton button2, JButton button3, JButton button5,
             SearchPanel panel1,
             InsertTartarugaPanel panel2, StatisticPanel panel3, InsertCartellaClinicaPanel panel4,
-            InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7,
+            InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7,InsertCartellaClinicaPanel panel8,
             MainFrame mainFrame) {
                 if(check == true){
         button2.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
@@ -192,6 +196,7 @@ public class Controller {
         mainFrame.remove(panel3);
         mainFrame.remove(panel6);
         mainFrame.remove(panel7);
+        mainFrame.remove(panel8);
         mainFrame.add(panel4, BorderLayout.CENTER);
         mainFrame.revalidate();
         mainFrame.repaint();
@@ -206,7 +211,7 @@ public class Controller {
     public void goToReinsertTarta(JButton button1, JButton button2, JButton button3, JButton button5,
             SearchPanel panel1,
             InsertTartarugaPanel panel2, StatisticPanel panel3, InsertCartellaClinicaPanel panel4,
-            InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7,
+            InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7,InsertCartellaClinicaPanel panel8,
             MainFrame mainFrame) {
         button5.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
         button1.setBorder(null);
@@ -215,22 +220,28 @@ public class Controller {
         mainFrame.remove(panel3);
         mainFrame.remove(panel4);
         mainFrame.remove(panel6);
+        mainFrame.remove(panel8);
         mainFrame.add(panel7, BorderLayout.CENTER);
         mainFrame.revalidate();
         mainFrame.repaint();
 
     }
 
-    public void goToReinsertCartellaClinica(JButton button2, JButton button3, JButton button5,
+    public void goToReinsertCartellaClinica(JButton button1,JButton button2, JButton button3, JButton button5,
             SearchPanel panel1,
             InsertTartarugaPanel panel2, StatisticPanel panel3, InsertCartellaClinicaPanel panel4,
             InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7, InsertCartellaClinicaPanel panel8,
             MainFrame mainFrame) {
         button5.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
         button3.setBorder(null);
+        button2.setBorder(null);
+        button1.setBorder(null);
+        mainFrame.remove(panel1);
         mainFrame.remove(panel2);
         mainFrame.remove(panel3);
         mainFrame.remove(panel4);
+        mainFrame.remove(panel5);
+        mainFrame.remove(panel6);
         mainFrame.remove(panel7);
         mainFrame.add(panel8, BorderLayout.CENTER);
         mainFrame.revalidate();
@@ -238,16 +249,17 @@ public class Controller {
 
     }
 
-    public void goToInsertStatoSalute(boolean checked,boolean getPermission, JButton button1, JButton button2, JButton button3,
+    public void goToInsertStatoSalute(boolean checked,boolean getPermission, JButton button1, JButton button2, JButton button3, JButton button5,
             SearchPanel panel1,
             InsertTartarugaPanel panel2, StatisticPanel panel3, InsertCartellaClinicaPanel panel4,
             InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7,
             InsertCartellaClinicaPanel panel8,
             MainFrame mainFrame) {
         if (getPermission == true && checked == true) {
-            button2.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
+            button5.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
             button1.setBorder(null);
             button3.setBorder(null);
+            mainFrame.remove(panel1);
             mainFrame.remove(panel2);
             mainFrame.remove(panel3);
             mainFrame.remove(panel4);

@@ -145,51 +145,51 @@ public class MainFrame extends JFrame {
         add(panel1, BorderLayout.CENTER);
 
         button1.addActionListener(e -> {
-            nc.goToSearch(button1, button2, button3, button5, panel1, panel2, panel3, panel4, panel5, panel6, panel7, this);
+            nc.goToSearch(button1, button2, button3, button5, panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, this);
         });
         button2.addActionListener(e -> {
-            nc.goToInsert(button1, button2, button3, button5, panel1, panel2, panel3, panel4, panel5, panel6, panel7, this);
+            nc.goToInsert(button1, button2, button3, button5, panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, this);
         });
         button3.addActionListener(e -> {
-            nc.goToStatistics(button1, button2, button3, button5, panel1, panel2, panel3, panel4, panel5, panel6,panel7, this);
+            nc.goToStatistics(button1, button2, button3, button5, panel1, panel2, panel3, panel4, panel5, panel6,panel7, panel8, this);
 
             
         });
 
         button5.addActionListener(e -> {
-            nc.goToReinsert(button1, button2, button3, button5, panel1, panel2, panel3, panel4, panel5, panel6,panel7, this);
+            nc.goToReinsert(button1, button2, button3, button5, panel1, panel2, panel3, panel4, panel5, panel6,panel7, panel8, this);
 
             
         });
 
 
         next1.addActionListener(e -> {
-            nc.goToInsertCartellaClinica(InsertTartarugaPanel.checked,button1, button2, button3, button5, panel1, panel2, panel3, panel4, panel5, panel6,panel7, this);
+            nc.goToInsertCartellaClinica(InsertTartarugaPanel.checked,button1, button2, button3, button5, panel1, panel2, panel3, panel4, panel5, panel6,panel7, panel8, this);
             
         });
 
 
         next2.addActionListener(e -> {
-            nc.goToInsertStatoSalute(InsertCartellaClinicaPanel.checked,getPermission,button1, button2, button3, panel1, panel2, panel3, panel4, panel5, panel6,panel7,panel8,this);
+            nc.goToInsertStatoSalute(InsertCartellaClinicaPanel.checked,getPermission,button1, button2, button3, button5, panel1, panel2, panel3, panel4, panel5, panel6,panel7,panel8,this);
         });
 
 
         next3.addActionListener(e -> {
             boolean reinsert = nc.cercaTarghetta(ReinserimentoPanel1.research.getText());
             if(reinsert == true) {
-                nc.goToReinsertTarta(button1, button2, button3, button5, panel1, panel2, panel3, panel4, panel5, panel6, panel7, this);     
+                nc.goToReinsertTarta(button1, button2, button3, button5, panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, this);     
             }
            
             System.out.println(reinsert);
         });
 
         next4.addActionListener(e -> {
-            nc.goToReinsertCartellaClinica(button1, button2, button3, panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, this);
-            System.out.println("NUOVO 4");
+            nc.goToReinsertCartellaClinica(button1, button2, button3, button5, panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, this);
+            System.out.println("NUOVO 3");
         });
 
         next5.addActionListener(e -> {
-            nc.goToInsertStatoSalute(InsertCartellaClinicaPanel.checked,getPermission, button1, button2, button3, panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, this);
+            nc.goToInsertStatoSalute(InsertCartellaClinicaPanel.checked,getPermission, button1, button2, button3,button5, panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, this);
             System.out.println("NUOVO 5");
         });
 
