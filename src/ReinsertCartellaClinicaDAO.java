@@ -4,7 +4,7 @@ public class ReinsertCartellaClinicaDAO {
 
 
     public void reinserisciCartellaClinica(CartellaClinicaModel cartella) {
-      final String QUERY = "select distinct specie from cartella_clinica NATURAL JOIN tartaruga where targhetta = INSERISCI QUI TARGHETTA";// + "'" + ReinserimentoPanel1.research.getText() + "'";
+      final String QUERY = "distinct specie from cartella_clinica NATURAL JOIN tartaruga where targhetta = " + "'" + ReinserimentoPanel1.research.getText() + "'";
       
         try (Connection conn = DriverManager.getConnection(Database.DB_URL, Database.USER, Database.PASS);
             Statement stmt = conn.createStatement();

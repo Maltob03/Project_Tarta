@@ -28,7 +28,7 @@ public class MainFrame extends JFrame {
         setLayout(new BorderLayout());
         setResizable(false);
         Controller nc = new Controller();
-
+        // Toolbar
         // Panel for button
         JPanel panelForButton = new JPanel(new FlowLayout(FlowLayout.LEFT));
 
@@ -168,13 +168,13 @@ public class MainFrame extends JFrame {
 
 
         next1.addActionListener(e -> {
-            nc.goToInsertCartellaClinica(button1, button2, button3, button5, panel1, panel2, panel3, panel4, panel5, panel6,panel7, this);
+            nc.goToInsertCartellaClinica(InsertTartarugaPanel.checked,button1, button2, button3, button5, panel1, panel2, panel3, panel4, panel5, panel6,panel7, this);
             
         });
 
 
         next2.addActionListener(e -> {
-            nc.goToInsertStatoSalute(getPermission,button1, button2, button3, panel1, panel2, panel3, panel4, panel5, panel6,panel7,panel8,this);
+            nc.goToInsertStatoSalute(InsertCartellaClinicaPanel.checked,getPermission,button1, button2, button3, panel1, panel2, panel3, panel4, panel5, panel6,panel7,panel8,this);
         });
 
 
@@ -193,7 +193,7 @@ public class MainFrame extends JFrame {
         });
 
         next5.addActionListener(e -> {
-            nc.goToInsertStatoSalute(getPermission, button1, button2, button3, panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, this);
+            nc.goToInsertStatoSalute(InsertCartellaClinicaPanel.checked,getPermission, button1, button2, button3, panel1, panel2, panel3, panel4, panel5, panel6, panel7, panel8, this);
             System.out.println("NUOVO 5");
         });
 
