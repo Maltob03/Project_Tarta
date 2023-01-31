@@ -170,6 +170,7 @@ public class Controller {
         button1.setBorder(null);
         button2.setBorder(null);
         button5.setBorder(null);
+        mainFrame.remove(panel1);
         mainFrame.remove(panel2);
         mainFrame.remove(panel3);
         mainFrame.remove(panel4);
