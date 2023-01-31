@@ -73,7 +73,7 @@ public class MainFrame extends JFrame {
         // Panel 2
         panel2 = new InsertTartarugaPanel(prova1);
         JButton next1 = new JButton("NEXT");
-        next1.setBackground(new Color(0, 240, 240));
+        next1.setBackground(new Color(0, 206, 209));
         next1.setPreferredSize(new Dimension(80, 40));
         next1.setBounds(50, 50, 100, 100);
         panelForNext.add(next1);
@@ -95,7 +95,7 @@ public class MainFrame extends JFrame {
         //panel 4
         panel4 = new InsertCartellaClinicaPanel(prova);
         JButton next2 = new JButton("NEXT");
-        next2.setBackground(new Color(0, 240, 240));
+        next2.setBackground(new Color(0, 206, 209));
         next2.setPreferredSize(new Dimension(80, 40));
         panelForSecondNext.add(next2);
         next2.setBounds(50, 50, 100, 100);
@@ -107,7 +107,7 @@ public class MainFrame extends JFrame {
         //panel6
         panel6 = new ReinserimentoPanel1(this);
         JButton next3 = new JButton("NEXT");
-        next3.setBackground(new Color(0, 240, 240));
+        next3.setBackground(new Color(0, 206, 209));
         next3.setPreferredSize(new Dimension(80, 40));
         next3.setBounds(50, 50, 100, 100);
         panelForReinsert1.add(next3);
@@ -115,11 +115,11 @@ public class MainFrame extends JFrame {
 
         boolean prova2 = true;
         
-
+      
         //Panel 7
         panel7 = new InsertTartarugaPanel(prova2);
         JButton next4 = new JButton("NEXT");
-        next4.setBackground(new Color(0, 240, 240));
+        next4.setBackground(new Color(0, 206, 209));
         next4.setPreferredSize(new Dimension(80, 40));
         next4.setBounds(50, 50, 100, 100);
         panelForReinsert2.add(next4);
@@ -130,7 +130,7 @@ public class MainFrame extends JFrame {
         //Panel 8
         panel8 = new InsertCartellaClinicaPanel(prova2);
         JButton next5 = new JButton("NEXT");
-        next5.setBackground(new Color(0, 240, 240));
+        next5.setBackground(new Color(0, 206, 209));
         next5.setPreferredSize(new Dimension(80, 40));
         next5.setBounds(50, 50, 100, 100);
         panelForReinsert3.add(next5);
