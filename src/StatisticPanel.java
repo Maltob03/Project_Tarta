@@ -11,9 +11,8 @@ public class StatisticPanel extends JPanel {
         ImageIcon background_image = new ImageIcon("bg.jpg");
         JLabel background = new JLabel("", background_image, JLabel.CENTER);
         add(background, BorderLayout.CENTER);
-        StatisticModel stats = new StatisticModel();
         StatisticDAO getNumber = new StatisticDAO();
-        String[] myStrings = getNumber.getStatistics(stats.getMese(), stats.getAnno());
+        String[] myStrings = getNumber.getStatistics(12, 2022);
 
         JPanel login = new JPanel();
         login.setLayout(null);
@@ -52,14 +51,12 @@ public class StatisticPanel extends JPanel {
 
         JComboBox ComboBecco = new JComboBox();
         ComboBecco.setModel(
-                new DefaultComboBoxModel(new String[] { "", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+                new DefaultComboBoxModel(new String[] { "","2022","2023" }));
         ComboBecco.setMaximumRowCount(10);
         ComboBecco.setBounds(407, 241, 69, 30);
         login.add(ComboBecco);
-        /*
-         * Integer.parseInt((String) ComboNaso.getSelectedItem()),
-         * Integer.parseInt((String) ComboBecco.getSelectedItem()),
-         */
+       
+        
         Button insert_tarta_button = new Button("Inserisci");
         insert_tarta_button.setBounds(300, 400, 100, 30);
         login.add(insert_tarta_button);
@@ -67,8 +64,12 @@ public class StatisticPanel extends JPanel {
         insert_tarta_button.addActionListener(e -> {
             int mese = Integer.parseInt((String) ComboNaso.getSelectedItem());
             int anno = Integer.parseInt((String) ComboBecco.getSelectedItem());
-            stats.setMese(mese);
-            stats.setAnno(anno);
+
+            String[] updatedStrings = getNumber.getStatistics(mese, anno);
+
+            nomeLabel.setText("Numero tartarughe totali: " + updatedStrings[0]);
+            targhettaLabel.setText("Numero tartarughe per mese : " + updatedStrings[1]);
+            mediaLabel.setText("Media :  " + updatedStrings[2]);
 
         });
 
