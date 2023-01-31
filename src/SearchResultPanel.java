@@ -27,7 +27,7 @@ public class SearchResultPanel extends JPanel {
 
         background.add(login);
 
-        JLabel insertTitle = new JLabel("Dati tartaruga");
+        JLabel insertTitle = new JLabel("Inserisci una tartaruga");
         insertTitle.setFont(new Font("Dialog", Font.BOLD, 24));
         insertTitle.setBounds(200, -31, 327, 154);
         login.add(insertTitle);

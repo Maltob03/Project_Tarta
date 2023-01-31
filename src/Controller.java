@@ -179,11 +179,12 @@ public class Controller {
 
     }
 
-    public void goToInsertCartellaClinica(JButton button1, JButton button2, JButton button3, JButton button5,
+    public void goToInsertCartellaClinica(boolean check,JButton button1, JButton button2, JButton button3, JButton button5,
             SearchPanel panel1,
             InsertTartarugaPanel panel2, SearchResultPanel panel3, InsertCartellaClinicaPanel panel4,
             InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7,
             MainFrame mainFrame) {
+                if(check == true){
         button2.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
         button1.setBorder(null);
         button3.setBorder(null);
@@ -194,6 +195,11 @@ public class Controller {
         mainFrame.add(panel4, BorderLayout.CENTER);
         mainFrame.revalidate();
         mainFrame.repaint();
+                }
+                else {
+                    JOptionPane.showMessageDialog(this.frame, "Inserisci tutti i campi e premi Insert per cambiare", "Errore", JOptionPane.ERROR_MESSAGE);
+            return;
+                }
 
     }
 
@@ -232,13 +238,13 @@ public class Controller {
 
     }
 
-    public void goToInsertStatoSalute(boolean getPermission, JButton button1, JButton button2, JButton button3,
+    public void goToInsertStatoSalute(boolean checked,boolean getPermission, JButton button1, JButton button2, JButton button3,
             SearchPanel panel1,
             InsertTartarugaPanel panel2, SearchResultPanel panel3, InsertCartellaClinicaPanel panel4,
             InsertValutazionePanel panel5, ReinserimentoPanel1 panel6, InsertTartarugaPanel panel7,
             InsertCartellaClinicaPanel panel8,
             MainFrame mainFrame) {
-        if (getPermission == true) {
+        if (getPermission == true && checked == true) {
             button2.setBorder(new MatteBorder(0, 0, 3, 0, (Color) SystemColor.textHighlight));
             button1.setBorder(null);
             button3.setBorder(null);
@@ -293,13 +299,11 @@ public class Controller {
 
             textField.addFocusListener(new FocusListener() {
                 public void focusGained(FocusEvent e) {
-                	textField.setText("Prova ad editarmi se hai il coraggio");
-                    textField.setEditable(false);
+                    textField.setText("NON SCRIVERE");
                 }
 
                 public void focusLost(FocusEvent e) {
-                	textField.setText("Bravo, scappa");
-                    textField.setEditable(false);
+                    textField.setText("NON SCRIVERE");
                 }
             });
         } else {
@@ -312,7 +316,6 @@ public class Controller {
                 }
 
             });
-            System.out.println("STO in ELSE");
         }
 
     }

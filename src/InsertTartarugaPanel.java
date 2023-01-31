@@ -2,7 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class InsertTartarugaPanel extends JPanel {
-
+    static boolean checked;
+    private Component frame;
     public InsertTartarugaPanel(boolean reinsert) {
 
         setLayout(new BorderLayout());
@@ -56,6 +57,13 @@ public class InsertTartarugaPanel extends JPanel {
         login.add(insert_tarta_button); 
 
         insert_tarta_button.addActionListener(e -> {
+            checked = true;
+            if(textField.getText().equals("") || textField_1.getText().equals("") || textField_3.getText().equals("") || textField_4.getText().equals("")
+            || textField.getText().equals("Nome") || textField_1.getText().equals("Targhetta") || textField_3.getText().equals("Sede") || textField_4.getText().equals("Vasca")){
+                JOptionPane.showMessageDialog(this.frame, "Campi non presenti", "Errore", JOptionPane.ERROR_MESSAGE);
+            return;
+            }
+            else{
             Tartaruga tartarugaToPass = nc.fillTartaruga(textField.getText(), textField_1.getText(),Integer.parseInt(textField_3.getText()),Integer.parseInt(textField_4.getText()));
             if(reinsert == false){
                 tDAO.inserisciTartaruga(tartarugaToPass); 
@@ -63,7 +71,11 @@ public class InsertTartarugaPanel extends JPanel {
             else {
                 rDAO.inserisciTartaruga(tartarugaToPass);
             }
+        }
+
         });
+
+        
 
 
         nc.clearTextFieldReinsert(textField,reinsert);

@@ -1,4 +1,5 @@
 import java.sql.*;
+import javax.swing.*;
 
 public class ViewTartarugaDAO {
 
@@ -8,9 +9,17 @@ public class ViewTartarugaDAO {
         StatoSaluteModel salute = new StatoSaluteModel();
         final String QUERY = "SELECT Id_tartaruga, Nome, Targhetta, Id_Sede, Id_Vasca, Specie, Lunghezza, Larghezza, Peso, Luogo_Di_Ritrovamento, Data_Di_Ritrovamento, Testa, Occhi, Naso, Becco, Collo, Pinne, Coda FROM Tartaruga NATURAL JOIN Cartella_Clinica NATURAL JOIN StatoDiSalute WHERE id_tartaruga = "
             + id;
-        try (Connection conn = DriverManager.getConnection(Database.DB_URL, Database.USER, Database.PASS);
-            Statement stmt = conn.createStatement();
+            try (Connection conn = DriverManager.getConnection(Database.DB_URL, Database.USER, Database.PASS);
+            Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ResultSet rs = stmt.executeQuery(QUERY);) {
+            
+              if (!rs.next()) {
+                JOptionPane.showMessageDialog(null, "No turtle found with id: " + id, "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+              } else {
+                // move the cursor back to the first row in the ResultSet
+                rs.beforeFirst();
+              }
           while (rs.next()) {
     
             // Display values

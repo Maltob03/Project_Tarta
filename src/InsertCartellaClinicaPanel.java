@@ -5,6 +5,7 @@ import java.awt.event.*;
 public class InsertCartellaClinicaPanel extends JPanel {
 
     static JTextField textField;
+    static boolean checked;
     public InsertCartellaClinicaPanel(boolean reinsert) {
 
         setLayout(new BorderLayout());
@@ -70,8 +71,17 @@ public class InsertCartellaClinicaPanel extends JPanel {
         insert_tarta_button.addActionListener(new ActionListener() {
             //private Component frame;
 
+            private Component frame;
+
             @Override
             public void actionPerformed(ActionEvent e) {
+                checked = true;
+                if(textField.getText().equals("") || textField_1.getText().equals("") || textField_3.getText().equals("") || textField_4.getText().equals("") ||textField_5.getText().equals("") || textField_6.getText().equals("") ||
+                textField.getText().equals("Specie") || textField_1.getText().equals("Lunghezza") || textField_3.getText().equals("Larghezza") || textField_4.getText().equals("Peso") ||textField_5.getText().equals("Luogo di Ritrovamento") || textField_6.getText().equals("Data di Ritrovamento")){
+                JOptionPane.showMessageDialog(this.frame, "Campi non presenti", "Errore", JOptionPane.ERROR_MESSAGE);
+            return;
+            }
+            else{
                 CartellaClinicaModel cartellaToPass = nc.fillCartellaClinica(textField.getText(),Integer.parseInt(textField_1.getText()),Integer.parseInt(textField_3.getText()),Integer.parseInt(textField_4.getText()),textField_5.getText(),textField_6.getText());
                 if(reinsert == false){
                     insertDAO.inserisciCartellaClinica(cartellaToPass);
@@ -81,6 +91,7 @@ public class InsertCartellaClinicaPanel extends JPanel {
                 }
                 return;
             }
+        }
         });
 
 
