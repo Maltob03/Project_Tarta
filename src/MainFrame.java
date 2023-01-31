@@ -89,6 +89,7 @@ public class MainFrame extends JFrame {
 
         // Panel 3
         panel3 = new StatisticPanel();
+        
 
         boolean prova = false;
         //panel 4
@@ -134,6 +135,8 @@ public class MainFrame extends JFrame {
         next5.setBounds(50, 50, 100, 100);
         panelForReinsert3.add(next5);
         panel8.add(panelForReinsert3, BorderLayout.SOUTH);
+
+        
 
 
         
