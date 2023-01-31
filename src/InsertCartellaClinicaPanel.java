@@ -85,7 +85,7 @@ public class InsertCartellaClinicaPanel extends JPanel {
 
 
         nc.clearTextFieldReinsert(textField, reinsert);
-        nc.clearTextField(textField_3);
+        nc.clearTextField(textField_1);
         nc.clearTextField(textField_3);
         nc.clearTextField(textField_4);
         nc.clearTextField(textField_5);

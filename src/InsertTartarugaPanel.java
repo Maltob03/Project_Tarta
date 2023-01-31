@@ -67,7 +67,7 @@ public class InsertTartarugaPanel extends JPanel {
 
 
         nc.clearTextFieldReinsert(textField,reinsert);
-        nc.clearTextField(textField_1);
+        nc.clearTextFieldReinsert(textField_1,reinsert);
         nc.clearTextField(textField_3);
         nc.clearTextField(textField_4);
 
