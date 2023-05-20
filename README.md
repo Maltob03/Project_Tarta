@@ -39,7 +39,7 @@
 
 Welcome to Project Tarta! This is a turtle management system designed to simplify the management and tracking of turtles within an aquarium. Whether you're a turtle enthusiast or an aquarium caretaker, this Java-based application with a Postgres SQL database integration is here to make your life easier.
 
-## How It Works
+## How It Works
 
 **Inserting Tarta**: With Project Tarta, you can effortlessly add turtles to the database. Simply provide the necessary information about the turtle, such as its name, species, age, and any other relevant details. The system will securely store the data for easy access and tracking.
 
