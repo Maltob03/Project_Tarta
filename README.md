@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a><img src="https://icons-for-free.com/iconfiles/png/512/java+original+wordmark-1324760550562670345.png" alt="Markdownify" width="200"></a>
+  <a><img src="https://res.cloudinary.com/maltob03/image/upload/v1684788171/java_x1iimg.webp" alt="Markdownify" width="200"></a>
   <br>
   Project Tarta
   <br>
